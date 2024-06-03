@@ -262,7 +262,7 @@ img{
 .productos-carrito {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.1rem;
     padding: 10px;
     border-bottom: 1px solid #d1cfcf;
 }
