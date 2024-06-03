@@ -1,0 +1,288 @@
+@font-face {
+    font-family: 'Perpetua Titling MT';
+    src: url('ruta/a/PerpetuaTitlingMT.ttf') format('truetype'); /* Cambia la ruta según donde hayas subido tus archivos de fuente */
+    /* Agrega otros formatos de fuente aquí si tienes disponibles (woff, woff2, etc.) */
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    text-decoration: none;
+}
+.contenedor-nav{
+    display: none;
+}
+*,
+*:before,
+*::after {
+    box-sizing: inherit;
+}
+body{
+    font-family: "Raleway",sans-serif;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    background-color: #E7DBDB;
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+/*Encabezado*/
+header{
+    background-color: #ED3889; /* Color de fondo rosa */
+    padding: 10px 0; /* Relleno superior e inferior de 20px, relleno izquierdo y derecho por defecto */
+    height: 75px;
+    border-bottom: 5px solid white;
+}
+.n-sitio {
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+}
+
+/*FPRMULARIO*/
+.contenedor-datos{
+    width: 80rem;
+    background-color: #EAD5DF;
+    border-radius: 2rem;
+    border: 1px solid #513C37;;
+    margin: 0 auto;
+    color: #513C37;
+    padding: 3rem 6rem;
+    margin-bottom: 5rem;
+}
+.parte1 h4, .parte2 h4{
+    margin-bottom: 1rem;
+}
+.controls{
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #513C37;
+    border-radius: 2rem;
+    padding: 1rem;
+    padding-left: 1.5rem;
+}
+.contenedor-datos h4{
+    margin-bottom: 1rem;
+}
+
+/*BODY*/
+h1{
+    text-align: center;
+    margin: 3rem;
+}
+.body-menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20rem;
+}
+.body-menu a{
+    background-color: #ED3889;
+    border-radius: 1.5rem;
+    border: 2px solid #fff;
+    padding: 1.5rem 6rem;
+    
+}
+.body-menu a:hover{
+    background-color: #EAD5DF;
+    border: 2px solid #513C37;
+    color: #513C37;
+}
+/*PIE DE PAGINA*/
+.site-footer{
+    background-color: #513C37;
+    margin-top: 5rem;
+    /*padding-top: 1rem;*/
+    padding: 1rem 0;
+    color: #fff;  
+}
+.contenedor-footer{
+    display: grid;
+    grid-template-columns: 1.4fr 4fr 1.4fr;
+}
+.crea_cuenta{
+    margin-top: 3rem;
+}
+.footer-info{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding-left: 2rem;
+}
+.footer-ubicacion, .pan-footer{
+    margin: 0 auto;
+}
+.footer-menu a{
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+}
+.footer-menu a:hover{
+    color: #fff;
+    padding-left: 1rem;
+}
+.parrafo-footer{
+    font-size: 1rem;
+    text-align: center;
+    padding: 2rem 2rem;
+    /*padding-bottom: 2rem;
+    padding-top: 2rem;*/
+}
+.logo-footer{
+    padding-top: 2rem;
+    text-align: center;
+}
+.img-pan{
+    text-align: center;
+}
+
+/*---------------TABLET/IPAD---------------*/
+/*Encabezado*/
+@media(max-width: 768px){
+    header{
+        height: 65px;
+        border-bottom: 0.5rem solid white;
+    }
+    .n-sitio {
+        font-size: 2rem;
+    }
+}
+/*Menu de navegacion*/
+@media(max-width: 768px){
+    .contenedor-nav{
+        border-bottom: 0.5rem solid white;
+    }
+    .nav-p a{
+        font-size: 1.5rem;
+    }
+}
+/*FORMULARIO*/
+@media(max-width: 768px){
+    .contenedor-datos{
+        width: 50rem;
+    }
+    .contenedor-datos h4{
+        font-size: 1.3rem;
+    }
+    .controls, .controls2{
+        padding: 8px;
+    }
+    .parte2 .parte2-2{
+        padding-left: 5rem;
+    }
+}
+/*BODY*/
+@media(max-width: 768px){
+    h1{
+        font-size: 2rem;
+    }
+    .body-menu{
+        gap: 3rem;
+    }
+    .body-menu a{
+        font-size: 1.3rem;
+        padding: 1.3rem 3.5rem;
+    }
+}
+/*PIE DE PAGINA*/
+@media(max-width: 768px){
+    .site-footer{
+        font-size: 1.3rem;
+    }
+    .contenedor-footer{
+        display: grid;
+        grid-template-columns: 2fr 3fr 2fr;
+    }
+    .footer-ubicacion{
+        padding-left: 6rem;
+    }
+    .footer-info{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 6rem;
+    }
+    .pan-footer{
+        padding-left: 5rem;
+    }
+    .img1{
+        width: 100px;
+        height: 100px;
+    }
+    .img2{
+        width: 100px;
+    }
+    .logo-footer{
+        text-align: left;
+        padding-left: 2rem;
+    }
+}
+
+/*---------------CELULAR---------------*/
+/*Encabezado*/
+@media(max-width: 430px){
+    header{
+        height: 55px;
+        border-bottom: 0.3rem solid white;
+    }
+    .n-sitio {
+        font-size: 1.5rem;
+        margin: 0.8rem auto;
+        /*padding-top: 0.8rem;*/
+    }
+}
+/*FORMULARIO*/
+@media(max-width: 430px){
+    .contenedor-datos{
+        width: 30rem;
+        padding: 2rem 3rem;
+    }
+    .contenedor-datos h4{
+        font-size: 1rem;
+    }
+    .controls, .controls2{
+        padding: 5px;
+        font-size: 1rem;
+    }
+    .parte2 .parte2-2{
+        padding-left: 3rem;
+    }
+}
+/*BODY*/
+@media(max-width: 430px){
+    h1{
+        font-size: 1.5rem;
+    }
+    .body-menu{
+        gap: 2rem;
+    }
+    .body-menu a{
+        font-size: 1rem;
+        padding: .8rem 2.5rem;
+    }
+}
+/*PIE DE PAGINA*/
+@media(max-width: 430px){
+    .site-footer{
+        font-size: 1.3rem;
+    }
+    .contenedor-footer{
+        display: grid;
+        grid-template-columns: 3fr 3fr;   
+    }
+    .footer-info{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-left: 1rem;
+    }
+    .img1{
+        width: 100px;
+        height: 100px;
+    }
+    .img2{
+        width: 100px;
+    }
+}
