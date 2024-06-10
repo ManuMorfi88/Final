@@ -1,4 +1,4 @@
-let productos = [];
+let productos = JSON.parse(localStorage.getItem("productos")) || [];
 
 const abrir1 = document.querySelector("#carrito");
 const cerrar1 = document.querySelector("#cerrarcarrito");
@@ -99,6 +99,7 @@ function añadirproductos() {
             desplegar.appendChild(btnComprar);
         }
     }
+    localStorage.setItem("productos", JSON.stringify(productos));
 }
 
 function mostrarMensajeSiCarritoVacio() {
@@ -174,3 +175,6 @@ add.forEach((pan) => {
         elemento(obj_producto);
     });
 });
+
+// Inicializar el carrito con los productos almacenados en localStorage
+añadirproductos();

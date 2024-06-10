@@ -7,6 +7,8 @@
 
 
 /*****************AÑADIR AL CARRITO ************/
+
+
 .cont-carrito{
     background-color: white;
     width: 50rem;
@@ -19,7 +21,6 @@
     z-index: 100;
     border-radius: 10px;
 
-    
 }
 
 .productos-carrito {
