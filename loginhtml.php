@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panaderia Rodriguez</title>
+    <title>Panadería Rodríguez</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -12,65 +12,31 @@
 </head>
 <body>
     <header>
-        <h1 class="n-sitio">PANADERIA RODRIGUEZ</h1>
+        <h1 class="n-sitio">PANADERÍA RODRÍGUEZ</h1>
     </header>
-
-    <div class="contenedor-nav">
-        <nav class="nav-p">
-            <a href="#" class="opcion">Inicio</a>
-
-            <div class="dropdown">
-                <a href="#" class="opcion">Colecciones</a>
-                <div class="dropdown-content">
-                    <div class="col">
-                        <p class="d-ops">PANADERIA</p>
-                        <a href="#">PAN TRADICIONAL</a>
-                        <a href="#">PAN MINIATURA</a>
-                    </div>
-                    <div class="col">
-                        <p class="d-ops">PAQUETES</p>
-                        <a href="#">FIESTAS</a>
-                        <a href="#">BODAS</a>
-                    </div>
-                    <div class="col">
-                        <p class="d-ops">TEMPORADA</p>
-                        <a href="#">DIA DE REYES</a>
-                        <a href="#">SAN VALENTIN</a>
-                        <a href="#">DIA DE MUERTOS</a>
-                        <a href="#">NAVIDAD</a>
-                    </div>
-                </div>
-            </div>
-
-            <a href="#" class="opcion">Contacto</a>
-            <a href="#" class="opcion">Favoritos</a>
-            <div class="img-car">
-                <img src="/YULI/images/icons8-carrito-de-compras-64.png" alt="">
-                <a href="#" class="opcion">Carrito</a>  
-            </div>
-        </nav>
-    </div>
-
-    <script src="./PanTrad.js"></script>
     
-    <h1>REGISTRARSE</h1>
+    <h1>INICIAR SESIÓN</h1>
 
     <section>
         <div class="contenedor-datos">
             <div class="parte1">
-                <form action="registrar.php" method="POST" id="registrar">
-                    <h4>Nombre:</h4>
-                    <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre">
-                    <h4>Numero Telefonico:</h4>
-                    <input class="controls" type="tel" name="numero" id="numero" placeholder="Ingrese su Numero" pattern="[0-9]*" title="Por favor ingrese solo números">
-                    <h4>Correo (opcional):</h4>
-                    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+                <?php
+                session_start();
+                if (isset($_SESSION['login_message'])) {
+                    echo '<p>' . $_SESSION['login_message'] . '</p>';
+                    unset($_SESSION['login_message']); // Eliminar el mensaje después de mostrarlo
+                }
+                ?>
+                <form action="login.php" method="POST" id="login">
+                    <h4>Correo Electrónico o Número Telefónico:</h4>
+                    <input class="controls" type="text" name="email" id="email" placeholder="Ingrese su Correo o Número" required>
                     <h4>Contraseña:</h4>
-                    <input class="controls" type="password" name="pass" id="pass" placeholder="Ingrese su Contraseña">
-                    <h4>Confirmar contraseña:</h4>
-                    <input class="controls" type="password" name="pass2" id="pass2" placeholder="Confirme su Contraseña">
-                    <h4>Ya tienes una cuenta?</h4>
-                    <a href="login.html">Iniciar sesión</a>
+                    <input class="controls" type="password" name="pass" id="pass" placeholder="Ingrese su Contraseña" required>
+                    <h4>¿Aún no tienes cuenta?</h4>
+                    <a href="registrar1.php" class="crea_cuenta">CREAR CUENTA</a>
+                    <div class="body-menu">
+                        <button class="opcion" type="submit">Entrar</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -79,13 +45,14 @@
     <section>
         <div class="body-menu">
             <div>
-                <a href="#" class="opcion">VOLVER</a>
+                <a href="inicio.html" class="opcion">VOLVER</a>
             </div>
             <div>
                 <a href="finalizar.html" class="opcion">SIGUIENTE</a>
             </div>
         </div>
     </section>
+
 
     <footer class="site-footer">
         <div class="contenedor-footer">
