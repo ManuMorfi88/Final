@@ -3,6 +3,102 @@
     src: url('ruta/a/PerpetuaTitlingMT.ttf') format('truetype'); /* Cambia la ruta según donde hayas subido tus archivos de fuente */
     /* Agrega otros formatos de fuente aquí si tienes disponibles (woff, woff2, etc.) */
 }
+
+
+
+/*****************AÑADIR AL CARRITO ************/
+.cont-carrito{
+    background-color: white;
+    width: 50rem;
+    max-height: 65rem;
+    overflow-y: auto;/*Añade una barra de deslazamiento*/
+    padding: 1rem;
+    position: absolute;
+    top:16.2rem;
+    right: 8.5rem;
+    z-index: 100;
+    border-radius: 10px;
+
+    
+}
+
+.productos-carrito {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 10px;
+    border-bottom: 1px solid #d1cfcf;
+}
+
+.productos-carrito img {
+    width: 100px;
+    height: 100px; /* Establecer una altura fija */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+}
+
+
+.botones-cantidad {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.btn-quantity {
+    padding: 5px;
+    background-color: #ED3889;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.inf-carrito p {
+    margin: 0;
+}
+
+.inf-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1; /* Asegura que este div ocupe todo el espacio disponible */
+}
+
+/***********esconder carrito************/
+.desaparecer{
+    display: none;
+}
+
+
+.buy-now {
+    background-color: #ED3889;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.buy-now:hover {
+    background-color: #d13576;
+}
+
+
+
+
+
 html {
     box-sizing: border-box;
     font-size: 62.5%;
