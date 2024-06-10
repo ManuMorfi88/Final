@@ -8,12 +8,14 @@ const add = document.querySelectorAll(".add");
 
 abrir1.addEventListener("click", () => {
     desplegar.classList.toggle("desaparecer");
+    mostrarMensajeSiCarritoVacio(); // Mostrar mensaje si el carrito está vacío
 });
 cerrar1.addEventListener("click", () => {
     desplegar.classList.add("desaparecer");
 });
 abrir2.addEventListener("click", () => {
     desplegar.classList.toggle("desaparecer");
+    mostrarMensajeSiCarritoVacio(); // Mostrar mensaje si el carrito está vacío
 });
 
 function añadirproductos() {
@@ -22,65 +24,95 @@ function añadirproductos() {
     desplegar.innerHTML = ""; // Limpiar el contenedor del carrito
     desplegar.appendChild(cerrarBtn); // Reagregar el botón "cerrar carrito"
 
-    productos.forEach((producto, index) => {
-        const divproducto = document.createElement("div");
-        divproducto.classList.add("productos-carrito");
+    if (productos.length === 0) {
+        // Mostrar mensaje si no hay productos en el carrito
+        mostrarMensajeSiCarritoVacio();
+    } else {
+        productos.forEach((producto, index) => {
+            const divproducto = document.createElement("div");
+            divproducto.classList.add("productos-carrito");
 
-        const imagenproducto = document.createElement("img");
-        imagenproducto.src = producto.imagen;
-        divproducto.appendChild(imagenproducto);
+            const imagenproducto = document.createElement("img");
+            imagenproducto.src = producto.imagen;
+            divproducto.appendChild(imagenproducto);
 
-        const divinf = document.createElement("div");
-        divinf.classList.add("inf-carrito");
+            const divinf = document.createElement("div");
+            divinf.classList.add("inf-carrito");
 
-        const name1 = document.createElement("p");
-        name1.innerText = producto.nombrepan;
-        divinf.appendChild(name1);
+            const name1 = document.createElement("p");
+            name1.innerText = producto.nombrepan;
+            divinf.appendChild(name1);
 
-        const price = document.createElement("p");
-        price.innerText = producto.preciopan;
-        divinf.appendChild(price);
+            const price = document.createElement("p");
+            price.innerText = producto.preciopan;
+            divinf.appendChild(price);
 
-        const cantidad = document.createElement("p");
-        cantidad.innerText = `Cantidad: ${producto.cantidad}`;
-        divinf.appendChild(cantidad);
+            const cantidad = document.createElement("p");
+            cantidad.innerText = "Cantidad: ";
+            divinf.appendChild(cantidad);
 
-        // Contenedor de botones de cantidad
-        const botonesCantidad = document.createElement("div");
-        botonesCantidad.classList.add("botones-cantidad");
+            const inputCantidad = document.createElement("input");
+            inputCantidad.type = "number";
+            inputCantidad.value = producto.cantidad;
+            inputCantidad.min = 1;
+            inputCantidad.classList.add("input-cantidad");
+            inputCantidad.addEventListener("change", (event) => {
+                cambiarCantidad(index, event.target.value);
+            });
+            divinf.appendChild(inputCantidad);
 
-        // Botones para incrementar y decrementar cantidad
-        const btnIncrementar = document.createElement("button");
-        btnIncrementar.innerText = "+";
-        btnIncrementar.classList.add("btn-quantity");
-        btnIncrementar.addEventListener("click", () => {
-            incrementarCantidad(index);
+            // Contenedor de botones de cantidad
+            const botonesCantidad = document.createElement("div");
+            botonesCantidad.classList.add("botones-cantidad");
+
+            // Botones para incrementar y decrementar cantidad
+            const btnIncrementar = document.createElement("button");
+            btnIncrementar.innerText = "+";
+            btnIncrementar.classList.add("btn-quantity");
+            btnIncrementar.addEventListener("click", () => {
+                incrementarCantidad(index);
+            });
+            botonesCantidad.appendChild(btnIncrementar);
+
+            const btnDecrementar = document.createElement("button");
+            btnDecrementar.innerText = "-";
+            btnDecrementar.classList.add("btn-quantity");
+            btnDecrementar.addEventListener("click", () => {
+                decrementarCantidad(index);
+            });
+            botonesCantidad.appendChild(btnDecrementar);
+
+            divinf.appendChild(botonesCantidad);
+
+            divproducto.appendChild(divinf);
+            desplegar.appendChild(divproducto);
         });
-        botonesCantidad.appendChild(btnIncrementar);
 
-        const btnDecrementar = document.createElement("button");
-        btnDecrementar.innerText = "-";
-        btnDecrementar.classList.add("btn-quantity");
-        btnDecrementar.addEventListener("click", () => {
-            decrementarCantidad(index);
-        });
-        botonesCantidad.appendChild(btnDecrementar);
+        // Crear y añadir el botón "Comprar ahora" si hay productos en el carrito
+        if (productos.length > 0) {
+            const btnComprar = document.createElement("button");
+            btnComprar.innerText = "Comprar ahora";
+            btnComprar.classList.add("buy-now");
+            btnComprar.addEventListener("click", () => {
+                alert("Proceso de compra iniciado");
+            });
+            desplegar.appendChild(btnComprar);
+        }
+    }
+}
 
-        divinf.appendChild(botonesCantidad);
+function mostrarMensajeSiCarritoVacio() {
+    // Remover cualquier mensaje existente
+    const mensajeExistente = document.querySelector(".mensaje-vacio");
+    if (mensajeExistente) {
+        mensajeExistente.remove();
+    }
 
-        divproducto.appendChild(divinf);
-        desplegar.appendChild(divproducto);
-    });
-
-    // Crear y añadir el botón "Comprar ahora" si hay productos en el carrito
-    if (productos.length > 0) {
-        const btnComprar = document.createElement("button");
-        btnComprar.innerText = "Comprar ahora";
-        btnComprar.classList.add("buy-now");
-        btnComprar.addEventListener("click", () => {
-            alert("Proceso de compra iniciado");
-        });
-        desplegar.appendChild(btnComprar);
+    if (productos.length === 0) {
+        const mensajeVacio = document.createElement("p");
+        mensajeVacio.innerText = "No hay productos agregados";
+        mensajeVacio.classList.add("mensaje-vacio");
+        desplegar.appendChild(mensajeVacio);
     }
 }
 
@@ -110,6 +142,18 @@ function incrementarCantidad(index) {
 function decrementarCantidad(index) {
     if (productos[index].cantidad > 1) {
         productos[index].cantidad--;
+    } else {
+        if (confirm("¿Deseas eliminar el producto?")) {
+            eliminarProducto(index);
+        }
+    }
+    añadirproductos();
+}
+
+function cambiarCantidad(index, nuevaCantidad) {
+    const cantidad = parseInt(nuevaCantidad, 10);
+    if (cantidad > 0) {
+        productos[index].cantidad = cantidad;
     } else {
         if (confirm("¿Deseas eliminar el producto?")) {
             eliminarProducto(index);
