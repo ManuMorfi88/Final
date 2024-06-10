@@ -621,6 +621,64 @@ margin-top: 1rem;
 
 
 
+    /************Favorito***********/
+
+    .fav i {
+        color: black;  /* Color del borde del corazón */
+        background: transparent;  /* Fondo transparente */
+    }
+
+    
+
+    .fav-fill {
+        display: none;
+        color: red;
+        align-items: end;
+        margin-bottom: 3.2rem;
+        margin-left: 11rem;
+        margin-top: 0.5rem;
+        border: none;
+        background-color: transparent;
+        font-size: 2.2rem;
+        position: absolute;
+        order: 0;
+        cursor: pointer;
+}
+
+    
+
+    .fav-fill.active {
+        display: inline-block;
+    }
+
+    .contenedor-favoritos {
+        position: absolute;
+        top: 10rem;
+        right: 1rem;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        display: none;
+    }
+    .producto-favorito {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 10px;
+        border-bottom: 1px solid #d1cfcf;
+    }
+    .producto-favorito img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    }
+    .producto-favorito .info {
+        flex-grow: 1;
+    }
+
+
+
 
 
 

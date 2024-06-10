@@ -3,11 +3,7 @@
 
  $email = $_POST['email'];
  $pass = $_POST['pass'];
-
- 
-
-
- 
+ $error_message = '';  // Variable para el mensaje de error
  
  $login = mysqli_query($db, "SELECT pass FROM datos WHERE correo = '$email' ");
 
@@ -15,7 +11,7 @@
     $row = $login -> fetch_assoc();
     $hash = $row['pass'];
     echo $hash;
-    echo 'si entre jeje';
+    
     $_SESSION['usuario']=$email;
     echo $pass;
     
@@ -23,15 +19,17 @@
         header("location: ./inicio.html");
     
     } else{
-        echo 'La contraseña no es valida, intente de nuevo';
+        $error_message = 'La contraseña no es válida, intente de nuevo';
     }
 
  }else{
-    echo 'no entre jeje';
-    echo '
-    <script>
-    alert("Este usuario no existe");
-    window.location = "./loginhtml.php";
-    ';
+    
+    $error_message = 'El usuario no existe';
  }
-
+ if ($error_message != '') {
+    echo "<script>
+            alert('$error_message');
+            window.location.href = './loginhtml.php';
+          </script>";
+    exit();
+}

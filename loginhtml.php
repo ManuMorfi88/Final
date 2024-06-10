@@ -20,13 +20,11 @@
     <section>
         <div class="contenedor-datos">
             <div class="parte1">
-                <?php
-                session_start();
-                if (isset($_SESSION['login_message'])) {
-                    echo '<p>' . $_SESSION['login_message'] . '</p>';
-                    unset($_SESSION['login_message']); // Eliminar el mensaje después de mostrarlo
-                }
-                ?>
+            <?php
+    if (isset($_GET['error'])) {
+        echo '<p style="color:red;">' . htmlspecialchars($_GET['error']) . '</p>';
+    }
+    ?>
                 <form action="login.php" method="POST" id="login">
                     <h4>Correo Electrónico o Número Telefónico:</h4>
                     <input class="controls" type="text" name="email" id="email" placeholder="Ingrese su Correo o Número" required>
