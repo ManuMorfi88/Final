@@ -5,6 +5,90 @@
 }
 
 
+/*CORAZON FAVORITO*/
+.fav, .fav1 {
+    align-items: end;
+    margin-bottom: 3.2rem;
+    margin-left: 11rem;
+    margin-top: 0.5rem;
+    border: none;
+    background-color: transparent;
+    font-size: 2.2rem;
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.fav {
+    color: black;
+}
+
+.fav1 {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.cont-favoritos{
+    padding-left: 40rem;
+    margin-left: 38rem;
+    margin-bottom: 1rem;
+
+}
+
+.cont-favoritos {
+    background-color: white;
+    width: 44rem;
+    max-height: 65rem;
+    overflow-y: auto; /*Añade una barra de desplazamiento*/
+    padding: 1rem;
+    position: absolute;
+    padding-top: 1.9rem;
+    z-index: 40;
+    border-radius: 10px;
+    margin-top: 20rem;
+}
+
+.productos-favoritos {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 10px;
+    border-bottom: 1px solid #d1cfcf;
+    padding-top: -4rem;
+    top: 3rem;
+    padding-left: 1rem;
+
+}
+
+.productos-favoritos img {
+    width: 100px;
+    height: 100px; /* Establecer una altura fija */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+}
+
+.inf-favoritos p {
+    margin: 0;
+}
+
+.inf-favoritos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1; /* Asegura que este div ocupe todo el espacio disponible */
+}
+
+/***********esconder favoritos************/
+.desaparecer {
+    display: none;
+}
+
+/*CORAZON FAVORITO*/
 
 
 /*****************AÑADIR AL CARRITO ************/
@@ -192,12 +276,15 @@ header{
 .opcion:last-child {
     margin-right: 0; /* Elimina el margen derecho del último enlace */
 }
+.login-menu{
+    padding-right: 1rem;
+}
 .login{
     color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 10px 5px;
-    font-size: 2.2rem;
-    margin-left: 37rem; 
+    font-size: 2rem;
+    margin-left: 45rem; 
 }
 .login-mono{
     font-size: 3rem;
@@ -594,7 +681,7 @@ a{
         visibility: hidden;
         transform: translateX(-100%);
         transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-        z-index: 122;
+        z-index: 99
     }
     
     .contenedor-nav.visible {
@@ -672,6 +759,7 @@ a{
         margin-top: 0.5rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        display: block;
     }
 
     .lista-imagenes {

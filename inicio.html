@@ -16,29 +16,23 @@
             <h1 class="nombre-sitio">PANADERIA RODRIGUEZ</h1>
         </header>
 
-        <div class="HHH">
-            <button class="abrir-menu" id="abrir"><i class="bi bi-list"></i></button>
-            <h2 class="nombre-sitio4">PANADERIA RODRIGUEZ</h2>
-            <button class="login-mono2" id="entrar"><i class="bi bi-person"></i></button>
-
-            <script>
-                document.getElementById('entrar').addEventListener('click', function() {
-                    window.location.href = 'http://localhost/final/loginhtml.php';
-                });
-            </script>        </div>
-        <div class="menu-principal">
+       
+    <div class="HHH">
+        <button class="abrir-menu" id="abrir"><i class="bi bi-list"></i></button>
+        <h2 class="nombre-sitio4">PANADERIA RODRIGUEZ</h2>
+    </div>
+    <div class="menu-principal">
         <div class="contenedor-nav" id="nav">
             <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
             
             <nav class="nav-principal">
                 <a href="inicio.html" class="opcion">Inicio <span class="separator">|</span></a>
-
                 <div class="dropdown">
-                <a href="#" class="opcion">Colecciones <span class="separator">|</span></a>
+                    <a href="#" class="opcion">Colecciones <span class="separator">|</span></a>
                     <div class="dropdown-content">
                         <div class="col">
                             <p class="d-ops">PANADERIA</p>
-                            <a href="/Final/PanTrad.html">PAN TRADICIONAL</a>
+                            <a href="PanTrad.html">PAN TRADICIONAL</a>
                             <a href="/Final/PanMiniatura.html">PAN MINIATURA</a>
                         </div>
                         <div class="col">
@@ -57,28 +51,30 @@
                 </div>
 
                 <a href="#" class="opcion">Contacto <span class="separator">|</span></a>
-                <a href="#" class="opcion">Favoritos <span class="separator">|</span></a>
+                <a href="favoritos.html" class="opcion">Favoritos</a>
+                <div class="cont-favoritos desaparecer" id="cont-favoritos">
+                    <button class="cerrar-menu" id="cerrarfavoritos"><i class="bi bi-x"></i></button>
+                </div>
             </nav>
         </div>
 
         <div class="login-menu">
             <nav>
-                <a href="loginhtml.php" class="login">Iniciar sesion </a>
                 <button class="login-mono" id="entrar"><i class="bi bi-person"></i></button>
                 <a href="#" class="opcion" id="carrito"> <i class="bi bi-cart"></i></a>  
-
             </nav>
         </div>
     </div>
 
-    
     <div class="cont-carrito desaparecer" id="cont-carrito">
         <button class="cerrar-menu" id="cerrarcarrito"><i class="bi bi-x"></i></button>
     </div>
 
-
     <script src="AgregarCarrito.js"></script>
     <script src="nav.js"></script>
+    <script src="loginDialog.js"></script> <!-- Nuevo archivo JavaScript -->
+    <script src="favoritos.js"></script> <!-- Nuevo archivo JavaScript -->
+
 
 
 
@@ -96,7 +92,7 @@
                     </div>
                     <div class="categoria">
                         <img src="images/2.jpeg" alt="">
-                        <a href="#">PAN TRADICIONAL</a>
+                        <a href="PanTrad.html">PAN TRADICIONAL</a>
                     </div>
                 </div>
                 <div class="pan-even">
