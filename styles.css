@@ -127,7 +127,7 @@ header{
     display: grid;
     grid-template-columns: repeat(5,1fr); 
     gap: 32px;
-    padding-left: 2.5rem;
+    padding-left: .4rem;
 
     }
     
@@ -137,7 +137,7 @@ header{
     padding: 2.5rem;
     width: 100%;
     margin: 0 auto;
-    background-color: #fad6f6;
+    background-color: #fbe7f8;
 }
 .img-photo {
     width: 100%;
@@ -159,7 +159,7 @@ img.photo {
 .fav, .fav1 {
     align-items: end;
     margin-bottom: 3.2rem;
-    margin-left: 17rem;
+    margin-left: 23rem;
     margin-top: 0.5rem;
     border: none;
     background-color: transparent;
@@ -265,7 +265,7 @@ img.photo {
 .buy {
     background-color: #6f3325; /* Tomato */
     color: #FFFFFF; /* Blanco */
-    width: 93%;
+    width: 27rem;
     aspect-ratio: 15/2;
     border: 2px solid #451e1e; /* IndianRed */
     text-align: center;
@@ -274,17 +274,18 @@ img.photo {
     border-radius: 15px; /* Borde redondeado */
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
+
 }
 
 .buy:hover {
-    background-color: #af7864; /* Coral */
-    border-color:#451e1e; /* IndianRed */
+    background-color: #451e1e; /* Coral */
+    border-color:#af7864; /* IndianRed */
 }
 
 .add {
-    background-color: #cd5c5c;
+    background-color: #985d4c;
     ; /* LightSalmon */
-    color: #FFFFFF; /* Blanco */
+    color: #ffffff; /* Blanco */
     text-align: center;
     width: 93%;
     aspect-ratio: 15/2;
@@ -295,11 +296,12 @@ img.photo {
     border-radius: 15px; /* Borde redondeado */
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
+    width: 27rem;
 }
 
 .add:hover {
-    background-color: #ce7f67; /* Salmon */
-    border-color: #CD5C5C; /* IndianRed */
+    background-color: #451e1e; /* Coral */
+    border-color:#af7864; /* IndianRed */
 }
 
 /* .buy{
