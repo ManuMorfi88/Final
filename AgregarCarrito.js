@@ -104,7 +104,7 @@ function añadirproductos() {
 
 function mostrarMensajeSiCarritoVacio() {
     // Remover cualquier mensaje existente
-    const mensajeExistente = document.querySelector(".mensaje-vacio");
+    const mensajeExistente = desplegar.querySelector(".mensaje-vacio");
     if (mensajeExistente) {
         mensajeExistente.remove();
     }
@@ -163,16 +163,28 @@ function cambiarCantidad(index, nuevaCantidad) {
     añadirproductos();
 }
 
+// Función para manejar la animación del botón
+function animateButton(button) {
+    button.classList.add("active");
+    setTimeout(() => {
+        button.classList.remove("active");
+    }, 1000);
+}
+
 add.forEach((pan) => {
     pan.addEventListener("click", (event) => {
         event.preventDefault();
+        const button = event.target;
         const obj_producto = {
-            imagen: event.target.parentNode.children[2].src,
-            nombrepan: event.target.parentNode.children[3].children[0].innerText,
-            preciopan: event.target.parentNode.children[3].children[1].innerText
+            imagen: button.parentNode.children[2].src,
+            nombrepan: button.parentNode.children[3].children[0].innerText,
+            preciopan: button.parentNode.children[3].children[1].innerText
         };
         console.log(obj_producto);
         elemento(obj_producto);
+        
+        // Llamada a la función de animación
+        animateButton(button);
     });
 });
 

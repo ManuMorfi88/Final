@@ -26,6 +26,23 @@ header{
     text-align: center;
     color: white;
 }
+
+
+
+
+/* Efecto de agregado */
+.added-effect {
+    background-color: #ED3889;
+    color: white;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.added-effect.active {
+    background-color: #61d147;
+    color: white;
+}
+
+
 /*SUB-MENU Colecciones*/
 .d-ops{
     font-size: 20px;
@@ -40,6 +57,8 @@ header{
     z-index: 1;
     
 }
+
+
 
 .dropdown:hover .dropdown-content {
     display: grid;
@@ -119,8 +138,8 @@ img{
     display: flex;
 }
 
-
-.fav{
+/*CORAZON FAVORITO*/
+.fav, .fav1 {
     align-items: end;
     margin-bottom: 3.2rem;
     margin-left: 11rem;
@@ -130,22 +149,68 @@ img{
     font-size: 2.2rem;
     position: absolute;
     display: block;
-    border: 0;
     cursor: pointer;
+    transition: color 0.3s;
 }
 
-.fav1{
-    align-items: end;
-    margin-bottom: 3.2rem;
-    margin-left: 11.9rem;
-    margin-top: 0.5rem;
-    border: none;
-    background-color: transparent;
-    font-size: 2.2rem;
-    position: absolute;
+.fav {
+    color: black;
+}
+
+.fav1 {
     color: red;
+}
+
+.hidden {
     display: none;
 }
+
+.cont-favoritos {
+    background-color: white;
+    width: 50rem;
+    max-height: 65rem;
+    overflow-y: auto; /*Añade una barra de desplazamiento*/
+    padding: 1rem;
+    position: absolute;
+    top: 14.2rem;
+    right: 8.5rem;
+    z-index: 100;
+    border-radius: 10px;
+}
+
+.productos-favoritos {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 10px;
+    border-bottom: 1px solid #d1cfcf;
+}
+
+.productos-favoritos img {
+    width: 100px;
+    height: 100px; /* Establecer una altura fija */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+}
+
+.inf-favoritos p {
+    margin: 0;
+}
+
+.inf-favoritos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1; /* Asegura que este div ocupe todo el espacio disponible */
+}
+
+/***********esconder favoritos************/
+.desaparecer {
+    display: none;
+}
+
+/*CORAZON FAVORITO*/
 
 
 
@@ -441,12 +506,10 @@ margin-top: 1rem;
         padding-left: 2rem;
     }
 }
-  
-/************CELULAR***********/
+ /************CELULAR***********/
 @media (max-width: 430px) {
-
     .cerrar-menu,
-    .abrir-menu{
+    .abrir-menu {
         display: block;
         display: flex;
         border: 0;
@@ -455,239 +518,255 @@ margin-top: 1rem;
         cursor: pointer;
     }
 
-        .abrir-menu{
-            color: rgb(168, 116, 116);
-        }
+    .abrir-menu {
+        color: rgb(168, 116, 116);
+    }
 
-        .cerrar-menu{
-            color: black;
-        }
+    .cerrar-menu {
+        color: black;
+    }
 
-        .logos1{
-            display: flex;
-            margin-left: 14.5rem;
-            color: #ED3889;
-            background-color: transparent;
-            cursor: pointer;
-            border: 0;
-            font-size: 4.5rem;
-            
-        }
-         
-        .contenedor-nav{
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .contenedor-nav {
-            display: flex;
-            flex-direction: column;
-            align-items: first baseline;
-            gap: 1rem;
-            position: absolute;
-            left:1rem;
-            top: 8rem;
-            bottom: 0;
-            background-color: #8e5959;
-            padding: 1rem;
-            border: 0;
-            width: 17.5rem;
-            box-shadow: 0 0 0 100vmax rgba(0,0,0,.5);
+    .logos1 {
+        display: flex;
+        margin-left: 14.5rem;
+        color: #ED3889;
+        background-color: transparent;
+        cursor: pointer;
+        border: 0;
+        font-size: 4.5rem;
+    }
+    .contenedor-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #8e5959;
+        padding: 2rem;
+        border: 0;
+        width: 20rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-100%);
+        transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+        z-index: 122;
+    }
     
-            
-        }
+    .contenedor-nav.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    
+    
+    .contenedor-nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5rem;
+        padding: 1rem 0; /* Increased padding for better click area */
+        width: 100%;
+        text-align: left; /* Align text to the left */
+    }
+    
+    .contenedor-nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+    }
+    
 
-        body.body{
-            position: fixed; 
-         }
+    .contenedor-nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
 
+    body.body {
+        position: fixed;
+    }
 
-    .nav-p{
-
+    .nav-p {
         flex-direction: column;
         align-items: center;
         padding: 4rem 0;
         gap: 2rem;
         background-color: #8e5959;
-        
     }
-
 
     .body {
         display: none;
     }
-    
+
     .body.visible {
         display: block;
     }
-    
-    .contenedor-nav.visible{
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    
 
-    .HHH{
-        margin-top: .5rem;
+    .HHH {
+        margin-top: 0.5rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 
-
-    
-    .lista-imagenes{
+    .lista-imagenes {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         margin-left: 0;
-    }   
-    /*img{
-        width: 125px;
-        height: 125px;
-    }*/
-   
-    .fav{
-        margin-left: 10rem;
-
     }
-    .container{
-        background-color: #fff; 
+
+    .container {
+        background-color: #fff;
         width: 370px;
         height: auto;
-        padding-bottom: 10x;
+        padding-bottom: 10px;
     }
 
-    .photo{  
-        width: 180px; aspect-ratio: 4/3;
+    .photo {
+        width: 180px;
+        aspect-ratio: 4/3;
         border: 1px solid black;
     }
-    .etiqueta1{
+
+    .etiqueta1 {
         font-size: 13px;
         gap: 4rem;
-        
-        
     }
 
-.cont-carrito{
-    width:38rem;
-    box-shadow: 0 0 0 100vmax rgba(0,0,0,.5);
-    padding-top: 3rem;
+    .cont-carrito {
+        width: 38rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+        padding-top: 3rem;
+    }
 
-}
-.inf-carrito{
-    font-size: 1.4rem;
-}
-.productos-carrito img{
-    width: 12rem;
-    height: 12rem;
-}
+    .inf-carrito {
+        font-size: 1.4rem;
+    }
 
-    .buy{
-        width:135px;
+    .productos-carrito img {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .buy {
+        width: 135px;
         margin-top: 4px;
-
-    }
-    .add{
-        width:135px;
-    }
-    .photo{  
-        width: 135px; aspect-ratio: 4/3;
-        border: 1px solid black;
     }
 
-
-
-        .site-footer{
-            font-size: 1.3rem;
-        }
-        .contenedor-footer{
-            display: grid;
-            grid-template-columns: 3fr 3fr;   
-        }
-        .footer-info{
-            display: grid;
-            grid-template-columns: 1fr;
-            padding-left: 1rem;
-        }
-        .img1{
-            width: 100px;
-            height: 100px;
-        }
-        .img2{
-            width: 100px;
-        }
+    .add {
+        width: 135px;
     }
 
-
-
-    /************Favorito***********/
-
-    .fav i {
-        color: black;  /* Color del borde del corazón */
-        background: transparent;  /* Fondo transparente */
+    .photo {
+        width: 135px;
+        aspect-ratio: 4/3;
+        border: 1px solid black;
     }
 
+    .site-footer {
+        font-size: 1.3rem;
+    }
+
+    .contenedor-footer {
+        display: grid;
+        grid-template-columns: 3fr 3fr;
+    }
+
+    .footer-info {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-left: 1rem;
+    }
+
+    .img1 {
+        width: 100px;
+        height: 100px;
+    }
+
+    .img2 {
+        width: 100px;
+    }
+
+    .hidden  {
+        display: none !important;
+    }
     
 
-    .fav-fill {
-        display: none;
-        color: red;
+    /* CORAZON FAVORITO */
+    .fav, .fav1 {
         align-items: end;
         margin-bottom: 3.2rem;
-        margin-left: 11rem;
+        margin-left: 10.3rem;
         margin-top: 0.5rem;
         border: none;
         background-color: transparent;
         font-size: 2.2rem;
         position: absolute;
-        order: 0;
+        display: block;
         cursor: pointer;
-}
-
-    
-
-    .fav-fill.active {
-        display: inline-block;
+        transition: color 0.3s;
     }
 
-    .contenedor-favoritos {
-        position: absolute;
-        top: 10rem;
-        right: 1rem;
-        background-color: white;
-        padding: 1rem;
-        border-radius: 10px;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    .fav {
+        color: black;
+        padding-right: 5rem;
+    }
+
+    .fav1 {
+        color: red;
+        padding-right: 4rem;
+
+    }
+
+    .hidden {
         display: none;
     }
-    .producto-favorito {
+
+    /***************** AÑADIR AL CARRITO ************/
+    .cont-favoritos {
+        background-color: white;
+        max-height: 65rem;
+        overflow-y: auto; /* Añade una barra de desplazamiento */
+        padding: 1rem;
+        position: absolute;
+        top: 14.2rem;
+        left: 2rem;
+        z-index: 100;
+        border-radius: 10px;
+        width: 38rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+        padding-top: 3rem;
+    }
+
+    .productos-favoritos {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1.1rem;
         padding: 10px;
         border-bottom: 1px solid #d1cfcf;
     }
-    .producto-favorito img {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
+
+    .productos-favoritos img {
+        width: 100px;
+        height: 100px; /* Establecer una altura fija */
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        object-fit: cover; /* Asegura que la imagen cubra el contenedor */
     }
-    .producto-favorito .info {
-        flex-grow: 1;
+
+    .inf-favoritos p {
+        margin: 0;
     }
 
+    .inf-favoritos {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        flex-grow: 1; /* Asegura que este div ocupe todo el espacio disponible */
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    /*********** Esconder favoritos ************/
+    .desaparecer {
+        display: none;
+    }
+}

@@ -20,7 +20,12 @@
             <button class="abrir-menu" id="abrir"><i class="bi bi-list"></i></button>
             <h2 class="nombre-sitio4">PANADERIA RODRIGUEZ</h2>
             <button class="login-mono2" id="entrar"><i class="bi bi-person"></i></button>
-        </div>
+
+            <script>
+                document.getElementById('entrar').addEventListener('click', function() {
+                    window.location.href = 'http://localhost/final/loginhtml.php';
+                });
+            </script>        </div>
         <div class="menu-principal">
         <div class="contenedor-nav" id="nav">
             <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
@@ -73,7 +78,7 @@
 
 
     <script src="AgregarCarrito.js"></script>
-    <script src="./PanTrad.js"></script>
+    <script src="nav.js"></script>
 
 
 
@@ -189,4 +194,14 @@
 
         
     </body>
+
+
+
+
+
+
+
+
+    
+
     </html>
