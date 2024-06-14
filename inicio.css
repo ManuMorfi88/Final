@@ -34,7 +34,7 @@
 
 .cont-favoritos{
     padding-left: 40rem;
-    margin-left: 38rem;
+    margin-left: 40rem;
     margin-bottom: 1rem;
 
 }
@@ -46,7 +46,7 @@
     overflow-y: auto; /*Añade una barra de desplazamiento*/
     padding: 1rem;
     position: absolute;
-    padding-top: 1.9rem;
+    top: -2rem;
     z-index: 40;
     border-radius: 10px;
     margin-top: 20rem;
@@ -188,6 +188,7 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -198,7 +199,7 @@ body{
     font-family: "Raleway",sans-serif;
     margin: 0 auto;
     font-size: 1.6rem;
-    background-color: #E7DBDB;
+    background-color: #ffeaea;
 }
 
 .contenedor-categorias,
@@ -208,55 +209,69 @@ body{
 }
 /*Encabezado*/
 header{
-    background-color: #ED3889; /* Color de fondo rosa */
+    background-color: #ffffff; /* Color de fondo rosa */
     padding: 10px 0; /* Relleno superior e inferior de 20px, relleno izquierdo y derecho por defecto */
-    height: 7.5rem;
-    width: auto;
-    border-bottom: white 5px solid;
+    height: 75px;
+    border-bottom: 1rem solid white;
 }
+/* Nombre del sitio */
 .nombre-sitio {
-    margin: 10px 0;
+    margin-top: 10px;
     text-align: center;
-    color: white;
+    color: #6f3325;
 }
 
-.d-ops{
+/* Dropdown Options */
+.d-ops {
     font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }
+
+/* Dropdown Content */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1; 
+    min-width: 200px; /* Ajusta el ancho mínimo */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px; /* Añade esquinas redondeadas */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
 }
+
 .dropdown:hover .dropdown-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
 .dropdown-content .col a {
     display: block;
-    padding: 8px 0; /* Ajusta el espaciado interno */
-    font-size: 14px; /* Cambia el tamaño del texto */
-    text-decoration: none; /* Elimina el subrayado predeterminado */
-    margin: 4px;
-}
-.col{
-    border: 1px solid;
-    padding: 0px 10px;
+    padding: 8px 16px; /* Ajusta el espaciado interno */
+    font-size: 14px;
+    text-decoration: none;
+    color: #333; /* Cambia el color del texto */
+    transition: background-color 0.3s; /* Añade una transición suave */
 }
 
-/*Menu de navegacion*/
-.contenedor-nav {
-    padding-top: 5rem;
+.dropdown-content .col a:hover {
+    background-color: #e0e0e0; /* Color de fondo al pasar el mouse */
 }
-.menu-principal{
+
+.col {
+    border: 1px solid #ddd;
+    padding: 8px 10px; /* Ajusta el espaciado interno */
+}
+
+/* Menú de navegación */
+.contenedor-nav {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.menu-principal {
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
-.login-menu{
-    padding-top: 5rem;
+    align-items: center;
 }
 
 .nav-principal {
@@ -265,33 +280,57 @@ header{
     padding-left: 55px;
 }
 
-.opcion{
-    color: rgb(0, 0, 0);
+.opcion {
+    color: #6f3325;
     text-decoration: none;
     padding: 10px 5px;
     font-size: 2.2rem;
-    margin-right: 20px; /* Espaciado entre las opciones del menú */
+    margin-right: 20px;
+    transition: color 0.3s; /* Transición suave del color */
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente "Poppins" */
+}
+
+.opcion:hover {
+    color: #b34a2b; /* Cambia el color al pasar el mouse */
 }
 
 .opcion:last-child {
-    margin-right: 0; /* Elimina el margen derecho del último enlace */
+    margin-right: 0;
 }
-.login-menu{
+
+.login-menu {
     padding-right: 1rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: flex-end;
 }
-.login{
-    color: rgb(0, 0, 0);
+
+.login {
+    color: #000;
     text-decoration: none;
     padding: 10px 5px;
     font-size: 2rem;
-    margin-left: 45rem; 
+    margin-left: auto;
+    transition: color 0.3s; /* Transición suave del color */
 }
-.login-mono{
+
+.login:hover {
+    color: #555; /* Cambia el color al pasar el mouse */
+}
+
+.login-mono {
     font-size: 3rem;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    transition: color 0.3s; /* Transición suave del color */
 }
+
+.login-mono:hover {
+    color: #b34a2b; /* Cambia el color al pasar el mouse */
+}
+
 .HHH .nombre-sitio4, .login-mono2{
     display: none;
 }
@@ -301,81 +340,101 @@ header{
     display: none;
 }
 /*Imagen de la panaderia*/
-.imagen-principal{
+.imagen-principal {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
 }
-.imagen-principal img{
+
+.imagen-principal img {
     max-width: 100%; 
     max-height: 100%; 
     height: 30rem;
     width: 120rem;
+    border-radius: 15px;             /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
 
+.imagen-principal img:hover {
+    transform: scale(1.05);          /* Aumenta el tamaño un poco al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más profunda al pasar el mouse */
+}
+
+
 /*Categorias de pan*/
-.contenedor-categorias h2{
-    font-family: 'Perpetua Titling MT', serif;
+.contenedor-categorias h2 {
+    font-family: "Dancing Script", cursive;
     font-size: 6rem;
     text-align: center;
     padding: 2rem 0;
+    color: #6f3325; /* Color café */
 }
-.listado-categorias{
+
+.listado-categorias {
     display: grid;
     grid-template-columns: 1.99fr .89fr;
     gap: 8rem;
+    padding: 2rem; /* Añade un poco de padding para separar el contenido del borde */
 }
-.pan-tra-min{
+
+.pan-tra-min {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 8rem;
     /*margin-left: 10rem;*/
 }
-.pan-even{
+
+.pan-even {
     display: grid;
     grid-template-columns: 1fr;
     /*padding-right: 31.25rem;*/
     /*margin-left: 10rem;*/
 }
-.categoria img{
+
+.categoria img {
     height: 25rem;
     width: 100%;
     border-radius: 3rem;
     border: 2px solid #513C37;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
-a{
+
+.categoria img:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más profunda al pasar el mouse */
+}
+
+a {
     text-decoration: none;
     color: #513C37;
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente "Poppins" */
     font-size: 2rem;
+    transition: color 0.3s ease; /* Transición suave para el color */
 }
-.categoria a{
+
+a:hover {
+    color: #6f3325; /* Color café al pasar el mouse */
+}
+
+.categoria a {
     display: block;
     text-align: center;
     margin-top: 3rem;
     padding: 2rem;
     border-radius: 3rem;
-    border: 2px solid;
+    border: 2px solid #513C37;
     background-color: #E7DBDB;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
 }
-.categoria a:hover{
+
+.categoria a:hover {
     background-color: #513C37;
     color: #E7DBDB;
-    border-radius: 3rem;
 }
-.categoria a{
-    display: block;
-    text-align: center;
-    margin-top: 3rem;
-    border-radius: 3rem;
-    border: 2px solid;
-    background-color: #E7DBDB;
-}
-.categoria a:hover{
-    background-color: #513C37;
-    color: #E7DBDB;
-    border-radius: 3rem;
-}
+
 
 /*PIE DE PAGINA*/
 .site-footer{
