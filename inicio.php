@@ -15,7 +15,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="inicio.css">
+    <link rel="stylesheet" href="styles1.css ">
 </head>
 <body>
     <header>
@@ -64,9 +64,9 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
         </div>
 
         <div class="login-menu">
-            <nav>
+            <nav class="loginyusuario">
                 <?php if ($nombre_usuario): ?>
-                    <a href="#" class="login" id="usuario"><?php echo htmlspecialchars($nombre_usuario); ?></a>
+                    <a href="#" class="login" id="usuario"><?php echo htmlspecialchars(substr($nombre_usuario, 0, 19)); ?></a>
                 <?php else: ?>
                     <a href="loginhtml.php" class="login">Iniciar sesión</a>
                 <?php endif; ?>

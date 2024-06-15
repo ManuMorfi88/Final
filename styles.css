@@ -35,7 +35,21 @@ header{
     font-size: 7rem;
 }
 
+.producto-finalizar img {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    border-radius: 4px;
+}
 
+
+.resumen-pedido{
+    background-color: #dd75a4;
+    color: rgb(0, 0, 0);
+    border: none;
+    font-size: 16px;
+    border-radius: 10px;
+    }
 
 /* Efecto de agregado */
 .added-effect {
@@ -373,6 +387,25 @@ img.photo {
 }
 
 /*****************AÑADIR AL CARRITO ************/
+
+.vaciar-carrito {
+    background-color: rgb(79, 61, 61);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.vaciar-carrito:hover {
+    background-color: rgb(55, 37, 37);
+}
+
+
+
 .cont-carrito{
     background-color: white;
     width: 50rem;

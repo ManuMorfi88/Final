@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fin.css">
+    <link rel="stylesheet" href="finalizar.css">
 </head>
 <body>
     <header>
@@ -43,91 +44,108 @@
             </div>
             <a href="#" class="opcion">Contacto</a>
             <a href="favoritos.html" class="opcion">Favoritos</a>
-            <a href="#" class="opcion" id="carrito">Carrito <i class="bi bi-cart"></i></a>  
-
+            <a href="javascript:history.back()" class="opcion">VOLVER</a>  
         </nav>
-</div>
+    </div>
 
+    <div class="container-finalizar">
+        <div class="direccion-entrega">
+            <h2>Elige la forma de entrega</h2>
+            <div class="opcion-entrega">
+                <input type="radio" name="entrega" id="entrega-domicilio" checked>
+                <label for="entrega-domicilio">Enviar a domicilio</label>
+            </div>
+            <div class="direccion">
+                <label for="calle">Calle</label>
+                <input type="text" id="calle" name="calle" required>
+                <label for="numero">Número</label>
+                <input type="text" id="numero" name="numero" required>
+                <label for="colonia">Colonia</label>
+                <input type="text" id="colonia" name="colonia" required>
+                <label for="referencias">Referencias</label>
+                <input type="text" id="referencias" name="referencias">
+            </div>
+            <div class="opcion-entrega">
+                <input type="radio" name="entrega" id="entrega-punto">
+                <label for="entrega-punto">Retirar en un punto de entrega</label>
+            </div>
+        </div>
 
-    <h1>FINALIZAR COMPRA</h1>
-
-    <section>
-        <div class="contenedor-compra">
-            <p>Muchas gracias por tu compra, esperemos vuelvas pronto.</p>
+        <div class="resumen-compra">
+            <h2>Resumen de compra</h2>
+            <div id="resumen-productos"></div>
             <p class="pagar">
-                Piezas:
+                Piezas: <span id="piezas">0</span>
                 <br>
-                Cantidad: $
-                <br>
-                Total a pagar: $
+                Total a pagar: $<span id="total">0.00</span>
             </p>
         </div>
-    </section>
+    </div>
 
     <section>
         <div class="body-menu">
             <div>
-                <a href="http://127.0.0.1:5501/ingresardatos.html" class="opcion">VOLVER</a>
+                <a href="javascript:history.back()" class="opcion">VOLVER</a>
             </div>
             <div>
-                <a href="#" class="opcion">FINALIZAR</a>
+                <a href="#" class="opcion" id="finalizar">FINALIZAR</a>
             </div>
         </div>
     </section>
 
     <footer class="site-footer">
         <div class="contenedor-footer">
-        <div class="footer-ubicacion">
-            <div class="logo-footer"><img class="img1" src="images/logo.jpeg" alt="logo footer"></div>
-            <br>
-            Calle. Renteria Luviano
-            <br>
-            Col. Lazaro Cardenas
-            <br>
-            Apatzingán Michoacan
-            <br>
-            C.P. 60630
-            <br>
-            <br>
-            <h4>Telefono para contactar</h4>
-            <nav class="footer-menu">
-            <a href="#">4531276239</a>
-            </nav>
-        </div>   
-        
-        <div class="footer-info">
-        <div>
-            <h4>Tienda en linea</h4>
-            <nav class="footer-menu">
-                <a href="#">Pan miniatura</a>
-                <a href="#">Pan tradicional</a>
-                <a href="#">Paquetes</a>
-                <a href="#">Arreglos</a>
-                <a href="#">Pan de temporada</a>
-                <a href="#">Pasteles</a>
-            </nav>
-        </div>            
-                
-        <div>
-            <h4>Ayuda</h4>
-            <nav class="footer-menu">
-                <a href="#">Conocenos</a>
-                <a href="#">Preguntas mas frecuentes</a>
-                <a href="#">Facturas</a>
-            </nav>
-        </div>            
+            <div class="footer-ubicacion">
+                <div class="logo-footer"><img class="img1" src="images/logo.jpeg" alt="logo footer"></div>
+                <br>
+                Calle. Renteria Luviano
+                <br>
+                Col. Lazaro Cardenas
+                <br>
+                Apatzingán Michoacan
+                <br>
+                C.P. 60630
+                <br>
+                <br>
+                <h4>Teléfono para contactar</h4>
+                <nav class="footer-menu">
+                    <a href="#">4531276239</a>
+                </nav>
+            </div>   
+            
+            <div class="footer-info">
+                <div>
+                    <h4>Tienda en línea</h4>
+                    <nav class="footer-menu">
+                        <a href="#">Pan miniatura</a>
+                        <a href="#">Pan tradicional</a>
+                        <a href="#">Paquetes</a>
+                        <a href="#">Arreglos</a>
+                        <a href="#">Pan de temporada</a>
+                        <a href="#">Pasteles</a>
+                    </nav>
+                </div>            
                     
-        <div>
-            <h4>Metodos de pago</h4>
-            <nav class="footer-menu">
-                <a href="#">Efectivo</a>
-                <a href="#">Transferencia</a>
-            </nav>
-        </div>            
-    
-        <div>
-            <h4>Horarios</h4>
-                    Lunes-Sabado:
+                <div>
+                    <h4>Ayuda</h4>
+                    <nav class="footer-menu">
+                        <a href="#">Conócenos</a>
+                        <a href="#">Preguntas más frecuentes</a>
+                        <a href="#">Facturas</a>
+                    </nav>
+                </div>            
+                        
+                <div>
+                    <h4>Métodos de pago</h4>
+                    <nav class="footer-menu">
+                        <a href="#">Efectivo</a>
+                        <a href="#">Transferencia</a>
+                    </nav>
+                </div>            
+        
+                <div>
+                    <h4>Horarios</h4>
+                    Lunes-Sábado:
                     <br>
                     8:00AM - 4:00 PM
                     <br>
@@ -135,12 +153,12 @@
                     Domingo:
                     <br>
                     Cerrado
-        </div>
-        </div>           
-         
+                </div>
+            </div>           
+            
             <div class="pan-footer">
-                <h4>Pan mas vendido</h4>
-                <div class="img-pan"><a href="#"><img class="img2" src="images/panmasvendido.jpeg" alt="Pan mas vedido"></a></div>
+                <h4>Pan más vendido</h4>
+                <div class="img-pan"><a href="#"><img class="img2" src="images/panmasvendido.jpeg" alt="Pan más vendido"></a></div>
             </div>
         </div>
         
@@ -152,10 +170,11 @@
                 Las imágenes mostradas son exclusivamente para uso ilustrativo.
             </p>
             <p>
-                © Panaderia Rodriguez es una empresa de Corporativo Fragua, S.A.B. de C.V. Todos los derechos reservados
+                © Panadería Rodríguez es una empresa de Corporativo Fragua, S.A.B. de C.V. Todos los derechos reservados
             </p>
         </div> 
     </footer>
-    
+
+    <script src="finalizar.js"></script>
 </body>
 </html>
