@@ -97,6 +97,15 @@ function añadirproductos() {
                 alert("Proceso de compra iniciado");
             });
             desplegar.appendChild(btnComprar);
+
+            // Crear y añadir el botón "Vaciar carrito"
+            const btnVaciarCarrito = document.createElement("button");
+            btnVaciarCarrito.innerText = "Vaciar carrito";
+            btnVaciarCarrito.classList.add("vaciar-carrito");
+            btnVaciarCarrito.addEventListener("click", () => {
+                vaciarCarrito();
+            });
+            desplegar.appendChild(btnVaciarCarrito);
         }
     }
     localStorage.setItem("productos", JSON.stringify(productos));
@@ -161,6 +170,13 @@ function cambiarCantidad(index, nuevaCantidad) {
         }
     }
     añadirproductos();
+}
+
+function vaciarCarrito() {
+    if (confirm("¿Estás seguro de que deseas vaciar el carrito?")) {
+        productos = [];
+        añadirproductos();
+    }
 }
 
 // Función para manejar la animación del botón
