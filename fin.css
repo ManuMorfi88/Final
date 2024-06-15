@@ -1,82 +1,89 @@
 @font-face {
     font-family: 'Perpetua Titling MT';
     src: url('ruta/a/PerpetuaTitlingMT.ttf') format('truetype'); /* Cambia la ruta según donde hayas subido tus archivos de fuente */
-    /* Agrega otros formatos de fuente aquí si tienes disponibles (woff, woff2, etc.) */
 }
+
 html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
+
 *,
 *:before,
 *::after {
     box-sizing: inherit;
 }
-body{
-    font-family: "Raleway",sans-serif;
-    margin: 0 auto;
+
+body {
+    font-family: "Raleway", sans-serif;
+    margin: 0;
     font-size: 1.6rem;
     background-color: #E7DBDB;
 }
-.contenedor{
+
+.contenedor {
     max-width: 120rem;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
-/*Esconde contendor*/
-.contenedor-nav{
+/* Esconde contenedor */
+.contenedor-nav {
     display: none;
 }
 
-
-/*Encabezado*/
-header{
-    background-color: #ED3889; /* Color de fondo rosa */
-    padding: 10px 0; /* Relleno superior e inferior de 20px, relleno izquierdo y derecho por defecto */
+/* Encabezado */
+header {
+    background-color: #ED3889;
+    padding: 10px 0;
     height: 75px;
     border-bottom: 1rem solid white;
 }
+
 .n-sitio {
     margin-top: 10px;
     text-align: center;
     color: white;
 }
 
-.d-ops{
+/* Dropdown */
+.d-ops {
     font-size: 20px;
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-   
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
-    
 }
 
 .dropdown:hover .dropdown-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
 .dropdown-content .col a {
     display: block;
-    padding: 8px 0; /* Ajusta el espaciado interno */
-    font-size: 14px; /* Cambia el tamaño del texto */
-    text-decoration: none; /* Elimina el subrayado predeterminado */
+    padding: 8px 0;
+    font-size: 14px;
+    text-decoration: none;
     color: inherit;
     margin: 4px;
 }
-.col{
+
+.col {
     border: 1px solid;
     padding: 0px 10px;
 }
 
-/*Menu de navegacion*/
-.contenedor-nav{
+/* Menú de navegación */
+.contenedor-nav {
     border-bottom: 1rem solid white;
 }
+
 .nav-p {
     display: flex;
     justify-content: space-around;
@@ -84,261 +91,246 @@ header{
     background-color: #513C37;
     padding: 10px 0;
 }
-.opcion{
+
+.opcion {
     color: white;
     text-decoration: none;
-    padding: 10px 15px; 
+    padding: 10px 15px;
     border-radius: 5px;
     font-size: large;
-    font-style: bold;
+    font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .opcion:hover {
     background-color: #796a67;
 }
-/*FINALIZAR COMPRA*/
-.contenedor-compra{
-    width: 80rem;
+
+/* Contenedor de compra */
+.contenedor-compra {
+    width: 80%;
+    max-width: 80rem;
     background-color: #EAD5DF;
     border-radius: 2rem;
-    border: 1px solid #513C37;;
+    border: 1px solid #513C37;
     margin: 0 auto;
     padding: 5rem;
     margin-bottom: 5rem;
 }
-.contenedor-compra p{
-    background-color: #fff;
-    height: 20rem;
-    padding: 10rem;
-    border-radius: 2rem;
+
+.contenedor-compra h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contenedor-compra h4 {
+    margin-bottom: 1rem;
+}
+
+.contenedor-compra input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
     border: 1px solid #513C37;
 }
-.contenedor-compra .pagar{
+
+.resumen-pedido {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.pagar {
     background-color: #fff;
-    height: 10rem;
     padding: 2rem;
     border-radius: 2rem;
-    margin-left: 70%;
-    margin-top: 20rem;
     border: 1px solid #513C37;
-}
-/*BODY*/
-h1{
+    width: 50%;
     text-align: center;
-    margin: 3rem;
 }
-.body-menu{
+
+/* Menú de botones */
+.body-menu {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20rem;
+    justify-content: space-around;
+    margin: 5rem auto;
 }
-.body-menu a{
+
+.body-menu a {
     background-color: #ED3889;
     border-radius: 1.5rem;
     border: 2px solid #fff;
     padding: 1.5rem 6rem;
-    
+    color: white;
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
 }
-.body-menu a:hover{
+
+.body-menu a:hover {
     background-color: #EAD5DF;
     border: 2px solid #513C37;
     color: #513C37;
 }
-/*PIE DE PAGINA*/
+
 .site-footer{
-    background-color: #513C37;
-    margin-top: 5rem;
-    /*padding-top: 1rem;*/
-    padding: 1rem 0;
-    color: #fff;  
+background-color: #513C37;
+margin-top: 5rem;
+padding-top: 1rem;
+padding: 1rem 0;
+color: #fff;
 }
 .contenedor-footer{
-    display: grid;
-    grid-template-columns: 1.4fr 4fr 1.4fr;
+display: grid;
+grid-template-columns: 1.4fr 4fr 1.4fr;
 }
 .footer-info{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    padding-left: 2rem;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1rem;
+padding-left: 2rem;
 }
 .footer-ubicacion, .pan-footer{
-    margin: 0 auto;
+margin: 0 auto;
 }
 .footer-menu a{
-    display: block;
-    text-align: left;
-    text-decoration: none;
-    color: #fff;
-    margin-bottom: 1rem;
-    text-transform: capitalize;
-    transition: all 0.3s ease;
+display: block;
+text-align: left;
+text-decoration: none;
+color: #fff;
+margin-bottom: 1rem;
+text-transform: capitalize;
+transition: all 0.3s ease;
 }
-.footer-menu a:hover{
-    color: #fff;
-    padding-left: 1rem;
+.footer-menu a
+{
+color: #fff;
+padding-left: 1rem;
 }
 .parrafo-footer{
-    font-size: 1rem;
-    text-align: center;
-    padding: 2rem 2rem;
-    /*padding-bottom: 2rem;
-    padding-top: 2rem;*/
+font-size: 1rem;
+text-align: center;
+padding: 2rem 2rem;
+padding-bottom: 2rem;
+padding-top: 2rem;
 }
 .logo-footer{
-    padding-top: 2rem;
-    text-align: center;
+padding-top: 2rem;
+text-align: center;
 }
 .img-pan{
-    text-align: center;
+text-align: center;
 }
 
-/*---------------TABLET/IPAD---------------*/
-/*Encabezado*/
-@media(max-width: 768px){
-    header{
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
         height: 65px;
         border-bottom: 0.5rem solid white;
     }
+    
     .n-sitio {
         font-size: 2rem;
     }
-}
-/*Menu de navegacion*/
-@media(max-width: 768px){
-    .contenedor-nav{
-        border-bottom: 0.5rem solid white;
+
+    .contenedor-compra {
+        width: 90%;
+        padding: 2rem;
     }
-    .nav-p a{
-        font-size: 1.5rem;
+
+    .body-menu {
+        flex-direction: column;
+        gap: 2rem;
     }
-}
-/*FORMULARIO*/
-@media(max-width: 768px){
-    .contenedor-compra{
-        width: 50rem;
-        font-size: 1.5rem;
-    }
-    .contenedor-compra p{
-        height: 10rem;
-        padding: 3rem;
-    }
-    .contenedor-compra .pagar{
-        height: 8rem;
-        padding: 1rem;
-        margin-left: 60%;
-        margin-top: 24rem;
-    }
-}
-/*BODY*/
-@media(max-width: 768px){
-    h1{
-        font-size: 2rem;
-    }
-    .body-menu{
-        gap: 3rem;
-    }
-    .body-menu a{
-        font-size: 1.3rem;
-        padding: 1.3rem 3.5rem;
-    }
-}
-/*PIE DE PAGINA*/
-@media(max-width: 768px){
+    @media(max-width: 768px){
     .site-footer{
-        font-size: 1.3rem;
+    font-size: 1.3rem;
     }
     .contenedor-footer{
-        display: grid;
-        grid-template-columns: 2fr 3fr 2fr;
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
     }
     .footer-ubicacion{
-        padding-left: 6rem;
+    padding-left: 6rem;
     }
     .footer-info{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding-left: 6rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 6rem;
     }
     .pan-footer{
-        padding-left: 5rem;
+    padding-left: 5rem;
     }
     .img1{
-        width: 100px;
-        height: 100px;
+    width: 100px;
+    height: 100px;
     }
     .img2{
-        width: 100px;
+    width: 100px;
     }
     .logo-footer{
-        text-align: left;
-        padding-left: 2rem;
+    text-align: left;
+    padding-left: 2rem;
+    }
     }
 }
 
-/*---------------CELULAR---------------*/
-/*Encabezado*/
-@media(max-width: 430px){
-    header{
+@media (max-width: 430px) {
+    header {
         height: 55px;
         border-bottom: 0.3rem solid white;
     }
+    
     .n-sitio {
         font-size: 1.5rem;
         margin: 0.8rem auto;
-        /*padding-top: 0.8rem;*/
     }
-}
-/*FORMULARIO*/
-@media(max-width: 430px){
-    .contenedor-compra{
-        width: 30rem;
-        font-size: 1rem;
+
+    .contenedor-compra {
+        width: 100%;
+        font-size: 1.4rem;
+        padding: 2rem;
     }
-    .contenedor-compra p{
-        height: 10rem;
-        padding: 3rem;
+
+    .resumen-pedido {
+        flex-direction: column;
     }
-    .contenedor-compra .pagar{
-        height: 6rem;
-        padding: rem;
-        margin-left: 40%;
-        margin-top: 14rem;
+
+    .pagar {
+        width: 100%;
+        margin-top: 2rem;
     }
-}
-/*BODY*/
-@media(max-width: 430px){
-    h1{
-        font-size: 1.5rem;
+
+    .body-menu a {
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
     }
-    .body-menu{
-        gap: 2rem;
+
+    .contenedor-footer {
+        flex-direction: column;
+        align-items: center;
     }
-    .body-menu a{
-        font-size: 1rem;
-        padding: .8rem 2.5rem;
-    }
-}
-/*PIE DE PAGINA*/
-@media(max-width: 430px){
-    .site-footer{
+    
+    @media(max-width: 430px){
+        .site-footer{
         font-size: 1.3rem;
-    }
-    .contenedor-footer{
+        }
+        .contenedor-footer{
         display: grid;
-        grid-template-columns: 3fr 3fr;   
-    }
-    .footer-info{
+        grid-template-columns: 3fr 3fr;
+        }
+        .footer-info{
         display: grid;
         grid-template-columns: 1fr;
         padding-left: 1rem;
-    }
-    .img1{
+        }
+        .img1{
         width: 100px;
         height: 100px;
-    }
-    .img2{
+        }
+        .img2{
         width: 100px;
-    }
+        }
+        }
 }
