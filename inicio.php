@@ -55,7 +55,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
                     </div>
                 </div>
 
-                <a href="#" class="opcion">Contacto <span class="separator">|</span></a>
+                <a href="#contacto" class="opcion">Contacto <span class="separator">|</span></a>
                 <a href="favoritos.html" class="opcion">Favoritos</a>
                 <div class="cont-favoritos desaparecer" id="cont-favoritos">
                     <button class="cerrar-menu" id="cerrarfavoritos"><i class="bi bi-x"></i></button>
@@ -112,7 +112,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
     </section>
     <script src="./PanTrad.js"></script>
 
-    <footer class="site-footer">
+    <footer id="contacto" class="site-footer" >
         <div class="contenedor-footer">
             <div class="footer-ubicacion">
                 <div class="logo-footer"><img class="img1" src="images/logo.jpeg" alt="logo footer"></div>

@@ -2,54 +2,77 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
-}
-.direccion-entrega {
-    width: 60%;
-    padding: 1rem;
-    border: 1px solid #ccc;
+    padding: 2rem;
+    background-color: #f4f4f4;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.direccion-entrega h2 {
+.direccion-entrega,
+.metodo-pago {
+    width: 60%;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.direccion-entrega h2,
+.metodo-pago h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
+    color: #333333;
 }
 
-.opcion-entrega {
+.opcion-entrega,
+.opcion-pago {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.opcion-entrega input[type="radio"] {
+.opcion-entrega input[type="radio"],
+.opcion-pago input[type="radio"] {
     margin-right: 1rem;
 }
 
-.direccion label {
-    display: block;
-    margin-top: 10px;
+.opcion-datos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
-.direccion input {
-    width: calc(25% - 10px);
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
+.opcion-datos h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #555555;
+}
+
+.opcion-datos .controls {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
     border-radius: 4px;
+    font-size: 1rem;
+    margin-right: 7rem;
+}
+
+.metodo-pago.hidden {
+    display: none;
 }
 
 .resumen-compra {
     width: 35%;
-    padding: 1rem;
-    border: 1px solid #ccc;
+    padding: 1.5rem;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .resumen-compra h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
+    color: #333333;
 }
 
 .producto-finalizar {
@@ -57,9 +80,9 @@
     align-items: center;
     margin-bottom: 1rem;
     padding: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 .producto-finalizar img {
@@ -72,6 +95,7 @@
 .producto-finalizar p {
     margin: 0;
     padding: 0 0.5rem;
+    color: #555555;
 }
 
 .resumen-pedido .pagar {
@@ -79,6 +103,8 @@
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
+    text-align: center;
+    color: #333333;
 }
 
 .body-menu {
@@ -113,4 +139,66 @@
 .img1, .img2 {
     max-width: 100px;
     margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .opcion-datos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para el modal de verificación */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo negro con opacidad */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% desde arriba y centrado */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Puede ajustarse según se necesite */
+    max-width: 500px; /* Ancho máximo del modal */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Sombra para darle profundidad */
+}
+
+.spinner {
+    border: 16px solid #f3f3f3; /* Color claro del spinner */
+    border-top: 16px solid #3498db; /* Color azul del spinner */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.success-icon {
+    display: none; /* Oculto inicialmente */
+    font-size: 100px;
+    color: green;
+    margin: 0 auto 20px;
+}
+
+.modal-text {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none; /* Clase para ocultar elementos */
 }

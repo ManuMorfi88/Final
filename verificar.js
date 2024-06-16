@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Obtener los productos almacenados en localStorage
-    const productosFinalizar = JSON.parse(localStorage.getItem("productosFinalizar")) || [];
+    const productosFinalizar = JSON.parse(localStorage.getItem("productos")) || [];
     let totalPiezas = 0;
     let totalPrecio = 0;
 
@@ -34,9 +34,31 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('piezas').innerText = totalPiezas;
     document.getElementById('total').innerText = totalPrecio.toFixed(2);
 
-    // Borrar productos del carrito después de finalizar la compra
+    // Función para mostrar el modal de verificación
+    function showVerificationModal() {
+        const modal = document.getElementById('verificationModal');
+        const spinner = document.getElementById('spinner');
+        const successIcon = document.getElementById('successIcon');
+        const modalText = document.getElementById('modalText');
+
+        modal.style.display = "block";
+
+        // Simular un retraso de 3 segundos para la verificación
+        setTimeout(() => {
+            spinner.style.display = "none";
+            successIcon.style.display = "block";
+            modalText.innerText = "¡Compra finalizada con éxito!";
+
+            // Redirigir a la página de inicio después de 2 segundos
+            setTimeout(() => {
+                window.location.href = "inicio.php";
+            }, 2000);
+        }, 3000);
+    }
+
+    // Manejar la finalización de la compra
     document.getElementById('finalizar').addEventListener('click', () => {
-        localStorage.removeItem("productosFinalizar");
-        localStorage.removeItem("productos"); // Agregar esta línea para borrar los productos del carrito también
+        localStorage.removeItem("productos");
+        showVerificationModal();
     });
 });
