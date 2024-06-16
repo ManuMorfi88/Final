@@ -17,7 +17,7 @@ body{
 }
 /*Encabezado*/
 header{
-    background-color: #ffffff; /* Color de fondo rosa */
+    background-color: #fff; /* Color de fondo rosa */
     padding: 10px 0; /* Relleno superior e inferior de 20px, relleno izquierdo y derecho por defecto */
     height: 75px;
     border-bottom: 1rem solid white;
@@ -66,38 +66,50 @@ header{
 
 
 /*SUB-MENU Colecciones*/
-.d-ops{
+/* Dropdown Options */
+.d-ops {
     font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }
+
+/* Dropdown Content */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-   
+    min-width: 200px; /* Ajusta el ancho mínimo */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    
+    border-radius: 8px; /* Añade esquinas redondeadas */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
 }
-
-
 
 .dropdown:hover .dropdown-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
 .dropdown-content .col a {
     display: block;
-    padding: 8px 0; /* Ajusta el espaciado interno */
-    font-size: 14px; /* Cambia el tamaño del texto */
-    text-decoration: none; /* Elimina el subrayado predeterminado */
-    color: inherit;
-    margin: 4px;
+    padding: 8px 16px; /* Ajusta el espaciado interno */
+    font-size: 14px;
+    text-decoration: none;
+    color: #333; /* Cambia el color del texto */
+    transition: background-color 0.3s; /* Añade una transición suave */
 }
-.col{
-    border: 1px solid;
-    padding: 0px 10px;
+
+.dropdown-content .col a:hover {
+    background-color: #e0e0e0; /* Color de fondo al pasar el mouse */
 }
+
+.col {
+    border: 1px solid #ddd;
+    padding: 8px 10px; /* Ajusta el espaciado interno */
+}
+
+/* Asegura que el dropdown se alinee correctamente */
+
+
 /*Menu de navegacion*/
 .contenedor-nav{
     border-bottom:1rem solid white ;

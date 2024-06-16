@@ -33,23 +33,15 @@
                     <h4>¿Aún no tienes cuenta?</h4>
                     <a href="registrar1.php" class="crea_cuenta">CREAR CUENTA</a>
                     <div class="body-menu">
-                        <button class="opcion" type="submit">Entrar</button>
+                    <button class="opcion" type="button" onclick="window.location.href='inicio.html'">Volver</button>
+                    <button class="opcion" type="submit">Entrar</button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="body-menu">
-            <div>
-                <a href="inicio.html" class="opcion">VOLVER</a>
-            </div>
-            <div>
-                <a href="finalizar.html" class="opcion">SIGUIENTE</a>
-            </div>
-        </div>
-    </section>
+
 
 
     <footer class="site-footer">

@@ -15,11 +15,11 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles1.css ">
+    <link rel="stylesheet" href="inicio.css">
 </head>
 <body>
     <header>
-        <h1 class="nombre-sitio">PANADERÍA RODRÍGUEZ</h1>
+        <h1 class="nombre-sitio">PANADERIA RODRIGUEZ</h1>
     </header>
 
     <div class="HHH">
@@ -95,7 +95,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
             <div class="pan-tra-min">
                 <div class="categoria">
                     <img src="images/1.jpeg" alt="">
-                    <a href="#">PAN MINIATURA</a>
+                    <a href="PanMiniatura.html">PAN MINIATURA</a>
                 </div>
                 <div class="categoria">
                     <img src="images/2.jpeg" alt="">
@@ -105,7 +105,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
             <div class="pan-even">
                 <div class="categoria">
                     <img src="images/3.jpeg" alt="">
-                    <a href="#">PAN PARA EVENTOS</a>
+                    <a href="fiestas.html">PAN PARA EVENTOS</a>
                 </div>
             </div>
         </div>
@@ -136,12 +136,11 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
                 <div>
                     <h4>Tienda en línea</h4>
                     <nav class="footer-menu">
-                        <a href="#">Pan miniatura</a>
-                        <a href="#">Pan tradicional</a>
-                        <a href="#">Paquetes</a>
-                        <a href="#">Arreglos</a>
-                        <a href="#">Pan de temporada</a>
-                        <a href="#">Pasteles</a>
+                    <a href="PanMiniatura.html">Pan miniatura</a>
+                        <a href="PanTrad.html">Pan tradicional</a>
+                        <a href="fiestas.html">Paquetes</a>
+                        <a href="bodas.html">Arreglos</a>
+                        <a href="Navidad.html">Pan de temporada</a> 
                     </nav>
                 </div>            
                     
