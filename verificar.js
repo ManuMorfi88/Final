@@ -18,7 +18,7 @@
             setTimeout(() => {
                 window.location.href = "inicio.php";
             }, 2000);
-        }, 3000);
+        }, 5000);
     }
 
     // Manejar la finalización de la compra

@@ -4,6 +4,10 @@
     /* Agrega otros formatos de fuente aquí si tienes disponibles (woff, woff2, etc.) */
 }
 
+nav.loginyusuario{
+
+    padding-right: 11rem;
+}
 
 /*CORAZON FAVORITO*/
 .fav, .fav1 {

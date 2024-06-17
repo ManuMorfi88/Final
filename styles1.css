@@ -3,13 +3,11 @@
     src: url('ruta/a/PerpetuaTitlingMT.ttf') format('truetype'); /* Cambia la ruta según donde hayas subido tus archivos de fuente */
     /* Agrega otros formatos de fuente aquí si tienes disponibles (woff, woff2, etc.) */
 }
-html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+
+nav.loginyusuario{
+
+    padding-right: 15rem;
 }
-
-
 /*CORAZON FAVORITO*/
 .fav, .fav1 {
     align-items: end;
@@ -293,10 +291,6 @@ header{
     margin-right: 20px;
     transition: color 0.3s; /* Transición suave del color */
     font-family: 'Poppins', sans-serif; /* Aplica la fuente "Poppins" */
-}
-
-.loginyusuario{
-    margin-right: 16.5rem;
 }
 
 .opcion:hover {

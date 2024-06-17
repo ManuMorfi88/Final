@@ -52,6 +52,5 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('¡Compra finalizada con éxito!');
         localStorage.removeItem("productosFinalizar");
         localStorage.removeItem("productos"); // Borrar también los productos del carrito
-        window.location.href = "inicio.html"; // Redirigir a la página de inicio
     });
 });
