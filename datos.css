@@ -22,7 +22,7 @@ body{
     font-family: "Raleway",sans-serif;
     margin: 0 auto;
     font-size: 1.6rem;
-    background-color: #E7DBDB;
+    background-color: #ffeaea;
 }
 .contenedor{
     max-width: 120rem;
@@ -30,7 +30,7 @@ body{
 }
 /*Encabezado*/
 header{
-    background-color: #ED3889; /* Color de fondo rosa */
+    background-color: #ffffff; /* Color de fondo rosa */
     padding: 10px 0; /* Relleno superior e inferior de 20px, relleno izquierdo y derecho por defecto */
     height: 75px;
     border-bottom: 1rem solid white;
@@ -38,7 +38,8 @@ header{
 .n-sitio {
     margin-top: 10px;
     text-align: center;
-    color: white;
+    color: #6f3325;
+    
 }
 
 .d-ops{
@@ -79,6 +80,7 @@ header{
 .nav-p {
     display: flex;
     justify-content: space-around;
+    
     align-items: center;
     background-color: #513C37;
     padding: 10px 0;
@@ -111,7 +113,8 @@ button.opcion:active {
     width: 80rem;
     background-color: #EAD5DF;
     border-radius: 2rem;
-    border: 1px solid #513C37;;
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     margin: 0 auto;
     color: #513C37;
     padding: 3rem 6rem;
@@ -122,8 +125,8 @@ button.opcion:active {
 }
 .controls{
     width: 100%;
-    background-color: #fff;
-    border: 1px solid #513C37;
+    background-color: #e6e6e6;
+    border: none;
     border-radius: 2rem;
     padding: 1rem;
     padding-left: 1.5rem;
@@ -158,7 +161,16 @@ button.opcion:active {
 /*BODY*/
 h1{
     text-align: center;
+    color: #6f3325;
     margin: 3rem;
+    
+    
+}
+.sesion {
+    font-family: "Dancing Script", cursive;
+}
+.registro{
+    font-family: "Dancing Script", cursive;
 }
 .body-menu{
     display: flex;
@@ -178,10 +190,19 @@ h1{
     border: 2px solid #513C37;
     color: #513C37;
 }
+.crea_cuenta{
+    text-decoration: none;
+    color: #53494e;
+}
+.inicio_sesion{
+    text-decoration: none;
+    color: #53494e;
+}
+
 /*PIE DE PAGINA*/
 .site-footer{
     background-color: #513C37;
-    margin-top: 5rem;
+    margin-top: 12rem;
     /*padding-top: 1rem;*/
     padding: 1rem 0;
     color: #fff;  

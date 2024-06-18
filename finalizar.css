@@ -109,9 +109,11 @@
 
 .body-menu {
     display: flex;
-    justify-content: space-between;
+    
     margin-top: 2rem;
 }
+
+
 
 .body-menu .opcion {
     padding: 1rem 2rem;
