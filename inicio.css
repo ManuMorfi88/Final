@@ -511,7 +511,7 @@ a:hover {
     }
     .menu-principal{
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 3fr 1fr;
     }
     .login-menu{
         padding-top: 5.8rem;
@@ -522,9 +522,12 @@ a:hover {
     }
     .login-mono{
         font-size: 2rem;
+        padding-right: 8rem;
     }
     .login-menu{
         padding-left: 107px;
+        padding-bottom: 0;
+
     }
    .nav-principal{
     padding-left: 0;
@@ -560,7 +563,7 @@ a:hover {
     .pan-even{
         display: grid;
         grid-template-columns: 1fr;
-        padding: 0 25.8rem;
+        padding: 0 24.7rem;
     }
 }
 /*PIE DE PAGINA*/
@@ -610,6 +613,18 @@ a:hover {
     .imagen-principal img{
         height: 20rem;
         width: 37rem;
+    }
+    .nav-principal {
+        flex-direction: column;
+    }
+
+    .nav-principal .opcion {
+        display: block;
+        padding-top: 3rem;
+        width: 100%;
+    }
+    .separator{
+        display: none;
     }
 }
 @media(max-width: 430px){

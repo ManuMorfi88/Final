@@ -677,7 +677,9 @@ margin-top: 1rem;
         transform: translateX(0);
     }
     
-    
+    .titulo h1{
+        font-size: 5rem;
+    }
     .contenedor-nav a {
         color: #fff;
         text-decoration: none;
@@ -750,7 +752,7 @@ margin-top: 1rem;
 
     .cont-carrito {
         width: 38rem;
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 0 1000vmax rgba(0, 0, 0, 0.5);
         padding-top: 3rem;
     }
 

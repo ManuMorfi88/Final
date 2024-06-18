@@ -34,7 +34,7 @@
                     <h4>Contraseña:</h4>
                     <input class="controls" type="password" name="pass" id="pass" placeholder="Ingrese su Contraseña" required>
                     <h4>¿Aún no tienes cuenta?</h4>
-                    <a href="registrar1.php" class="crea_cuenta">CREAR CUENTA</a>
+                    <a href="registrar1.php" class="crea_cuenta">Crear cuenta</a>
                     <div class="body-menu">
                     <button class="opcion" type="button" onclick="window.location.href='inicio.php'">Volver</button>
                     <button class="opcion" type="submit">Entrar</button>

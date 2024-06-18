@@ -233,6 +233,9 @@ h1{
         margin: 0.8rem auto;
         /*padding-top: 0.8rem;*/
     }
+    .login-mono{
+        display: inline-block;
+    }
 }
 /*FORMULARIO*/
 @media(max-width: 430px){
