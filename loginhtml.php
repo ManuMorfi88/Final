@@ -9,13 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="datos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
 </head>
 <body>
     <header>
         <h1 class="n-sitio">PANADERÍA RODRÍGUEZ</h1>
     </header>
     
-    <h1>INICIAR SESIÓN</h1>
+    <h1 class="sesion">INICIAR SESIÓN</h1>
 
     <section>
         <div class="contenedor-datos">
@@ -31,7 +34,7 @@
                     <h4>Contraseña:</h4>
                     <input class="controls" type="password" name="pass" id="pass" placeholder="Ingrese su Contraseña" required>
                     <h4>¿Aún no tienes cuenta?</h4>
-                    <a href="registrar1.php" class="crea_cuenta">CREAR CUENTA</a>
+                    <a href="registrar1.php" class="crea_cuenta">Crear cuenta</a>
                     <div class="body-menu">
                     <button class="opcion" type="button" onclick="window.location.href='inicio.php'">Volver</button>
                     <button class="opcion" type="submit">Entrar</button>

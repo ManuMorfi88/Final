@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="datos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
 </head>
 <body>
     <header>
@@ -51,7 +54,7 @@
 
     <script src="./PanTrad.js"></script>
     
-    <h1>REGISTRARSE</h1>
+    <h1 class="registro">REGISTRARSE</h1>
 
     <section>
         <div class="contenedor-datos">
@@ -76,7 +79,7 @@
     
                     <input class="controls" type="password" name="pass2" id="pass2" placeholder="Confirme su Contraseña" required>
                     <h4>¿Ya tienes una cuenta?</h4>
-                    <a href="loginhtml.php">Iniciar sesión</a>
+                    <a class="inicio_sesion" href="loginhtml.php">Iniciar sesión</a>
                     <div class="body-menu">
                         <div>
                             <button  class="opcion" type="submit" onclick="return validarFormulario()">Entrar</button>
