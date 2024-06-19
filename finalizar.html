@@ -48,48 +48,33 @@
         </nav>
     </div>
 
+
     <div class="container-finalizar">
         <div class="direccion-entrega">
             <h2>Elige la forma de entrega</h2>
-            <div class="opcion-entrega">
-                <input type="radio" name="entrega" id="entrega-domicilio" checked>
-                <label for="entrega-domicilio">Enviar a domicilio</label>
-            </div>
-            <div class="opcion-entrega">
-                <input type="radio" name="entrega" id="entrega-punto">
-                <label for="entrega-punto">Retirar en un punto de entrega</label>
-            </div>
-
-            <div class="opcion-datos">
+            <form id="formDireccion" action="procesar_compra.php" method="POST">
                 <h4>Calle</h4>
-                <input class="controls" type="text" name="Calle" id="calle" placeholder="Ingrese su Calle">
+                <input class="controls" type="text" name="calle" id="calle" placeholder="Ingrese su Calle" required>
                 <h4>Número</h4>
-                <input class="controls" type="text" name="Numero" id="numero" placeholder="Ingrese su Número">
+                <input class="controls" type="text" name="numero" id="numero" placeholder="Ingrese su Número" required>
                 <h4>Colonia</h4>
-                <input class="controls" type="text" name="Colonia" id="colonia" placeholder="Ingrese su Colonia">
+                <input class="controls" type="text" name="colonia" id="colonia" placeholder="Ingrese su Colonia" required>
                 <h4>Referencias</h4>
-                <input class="controls" type="text" name="Referencias" id="referencias" placeholder="Ingrese Referencias">
-            </div>
+                <input class="controls" type="text" name="referencias" id="referencias" placeholder="Ingrese Referencias">
 
-
-            <div class="metodo-pago hidden">
-                <h2>Elige el método de pago</h2>
-                <div class="opcion-pago">
-                    <input type="radio" name="pago" id="pago-efectivo" checked>
-                    <label for="pago-efectivo">Efectivo</label>
-                </div>
-                <div class="opcion-pago">
-                    <input type="radio" name="pago" id="pago-tarjeta">
-                    <label for="pago-tarjeta">Tarjeta de crédito/débito</label>
-                </div>
-                <div class="opcion-pago">
-                    <input type="radio" name="pago" id="pago-transferencia">
-                    <label for="pago-transferencia">Transferencia bancaria</label>
-                </div>
-            </div>
-
+                <input type="hidden" name="productos" id="productosInput">
+                <input type="hidden" name="piezas" id="piezasInput">
+                <input type="hidden" name="total" id="totalInput">
+                <button id="volver" class="button">VOLVER</button>
+                <button type="submit" id="finalizar">FINALIZAR</button>
+                
+            </form>
         </div>
-
+        <script>
+            document.getElementById('volver').addEventListener('click', function() {
+                window.location.href = document.referrer;
+            });
+        </script>
         <div class="resumen-compra">
             <h2>Resumen de compra</h2>
             <div id="resumen-productos"></div>
@@ -101,25 +86,60 @@
         </div>
     </div>
 
-    <section>
-        <div class="body-menu">
-            <div>
-                <a href="javascript:history.back()" class="opcion">VOLVER</a>
-            </div>
-            <div>
-                <a href="#" class="opcion" id="finalizar">FINALIZAR</a>
-            </div>
-        </div>
-    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productosFinalizar = JSON.parse(localStorage.getItem("productosFinalizar")) || [];
+            let totalPiezas = 0;
+            let totalPrecio = 0;
 
-  <!-- Modal de verificación -->
-<div id="verificationModal" class="modal">
-    <div class="modal-content">
-        <div id="spinner" class="spinner"></div>
-        <div id="successIcon" class="success-icon">✔</div>
-        <p id="modalText" class="modal-text">Procesando compra...</p>
-    </div>
-</div>
+            const uniqueProductos = {};
+
+            productosFinalizar.forEach(producto => {
+                const normalizedNombre = producto.nombrepan.trim().toLowerCase();
+                if (uniqueProductos[normalizedNombre]) {
+                    uniqueProductos[normalizedNombre].cantidad += parseInt(producto.cantidad);
+                } else {
+                    uniqueProductos[normalizedNombre] = {...producto, cantidad: parseInt(producto.cantidad)};
+                }
+            });
+
+            Object.values(uniqueProductos).forEach(producto => {
+                totalPiezas += producto.cantidad;
+                totalPrecio += producto.cantidad * parseFloat(producto.preciopan.replace(' MXN', ''));
+
+                const productoDiv = document.createElement('div');
+                productoDiv.classList.add('producto-finalizar');
+
+                const imagen = document.createElement('img');
+                imagen.src = producto.imagen;
+                productoDiv.appendChild(imagen);
+
+                const nombre = document.createElement('p');
+                nombre.textContent = producto.nombrepan;
+                productoDiv.appendChild(nombre);
+
+                const cantidad = document.createElement('p');
+                cantidad.textContent = `Cantidad: ${producto.cantidad}`;
+                productoDiv.appendChild(cantidad);
+
+                const precio = document.createElement('p');
+                precio.textContent = `Precio: ${producto.preciopan}`;
+                productoDiv.appendChild(precio);
+
+                document.getElementById('resumen-productos').appendChild(productoDiv);
+            });
+
+            document.getElementById('piezas').innerText = totalPiezas;
+            document.getElementById('total').innerText = totalPrecio.toFixed(2);
+
+            // Actualizar los valores en los campos ocultos del formulario antes de enviar
+            document.getElementById('formDireccion').addEventListener('submit', (event) => {
+                document.getElementById('productosInput').value = JSON.stringify(productosFinalizar);
+                document.getElementById('piezasInput').value = totalPiezas;
+                document.getElementById('totalInput').value = totalPrecio.toFixed(2);
+            });
+        });
+    </script>
 
 <!-- Agregar la referencia al archivo verificar.js -->
 <script src="verificar.js"></script>
@@ -207,7 +227,7 @@
         </div> 
     </footer>
 
-    <script src="finalizar.js"></script>
+    <!-- <script src="finalizar.js"></script> -->
     <script src="finalizar-compra-efecto.js"></script>
 </body>
 </html>
