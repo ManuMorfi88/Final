@@ -517,7 +517,7 @@ a:hover {
         padding-top: 5.8rem;
     }
     
-    .login-menu a{
+    .opcion{
         display: none;
     }
     .login-mono{
@@ -671,6 +671,7 @@ a:hover {
         display: none;
     }
 
+   
     
     .nombre-sitio4{
         display: block;
@@ -730,6 +731,7 @@ a:hover {
     .cerrar-menu {
         color: black;
     }
+
 
     .logos1 {
         display: flex;
@@ -998,5 +1000,42 @@ a:hover {
     /*********** Esconder favoritos ************/
     .desaparecer {
         display: none;
+    }
+
+    .bi::before, [class*=" bi-"]::before, [class^=bi-]::before{
+        position: absolute;
+        
+    }
+
+    .logintxt{
+        display: inline-block;
+        position: absolute;
+        z-index: 30;
+        top: 7rem;
+        font-size: 2rem;
+        margin-left: 4rem;
+        display: grid;
+    }
+
+    .login-mono{
+        display: inline-block;
+        position: absolute;
+        z-index: 30;
+        top: 7.5rem;
+        font-size: 2rem;
+        margin-left: 17rem;
+        display: grid;
+    }
+
+
+    .login{
+        color: #000;
+        text-decoration: none;
+        font-size: 2rem;
+        padding-bottom: 10rem;
+        margin-left: -5rem;
+        transition: color 0.3s;
+        position: absolute;
+        top: 6.5rem;
     }
 }

@@ -17,7 +17,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="inicio.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
 </head>
 <body>
     <header>
@@ -70,7 +70,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
                 <?php if ($nombre_usuario): ?>
                     <a href="#" class="login" id="usuario"><?php echo htmlspecialchars(substr($nombre_usuario, 0, 19)); ?></a>
                 <?php else: ?>
-                    <a href="loginhtml.php" class="login">Iniciar sesión</a>
+                    <a href="loginhtml.php" class="logintxt">Iniciar sesión</a>
                 <?php endif; ?>
                 <button class="login-mono" id="entrar"><i class="bi bi-person"></i></button>
                 <a href="#" class="opcion" id="carrito"><i class="bi bi-cart"></i></a>  
@@ -85,7 +85,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
     <script src="AgregarCarrito.js"></script>
     <script src="nav.js"></script>
     <script src="favoritos.js"></script>
-    <script src="userDialog.js"></script> <!-- Nuevo archivo JavaScript -->
+    <script src="userDialog.js"></script> <!-- Archivo JavaScript para el cuadro de diálogo -->
     
     <div class="imagen-principal">
         <img src="images/PANADERIA-PRINCIPAL-1.jpg" alt="Panadería Principal">
@@ -114,7 +114,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
     </section>
     <script src="./PanTrad.js"></script>
 
-    <footer id="contacto" class="site-footer" >
+    <footer id="contacto" class="site-footer">
         <div class="contenedor-footer">
             <div class="footer-ubicacion">
                 <div class="logo-footer"><img class="img1" src="images/logo.jpeg" alt="logo footer"></div>
@@ -138,7 +138,7 @@ $email_usuario = isset($_SESSION['email']) ? $_SESSION['email'] : null;
                 <div>
                     <h4>Tienda en línea</h4>
                     <nav class="footer-menu">
-                    <a href="PanMiniatura.html">Pan miniatura</a>
+                        <a href="PanMiniatura.html">Pan miniatura</a>
                         <a href="PanTrad.html">Pan tradicional</a>
                         <a href="fiestas.html">Paquetes</a>
                         <a href="bodas.html">Arreglos</a>

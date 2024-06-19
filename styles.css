@@ -754,6 +754,7 @@ margin-top: 1rem;
         width: 38rem;
         box-shadow: 0 0 0 1000vmax rgba(0, 0, 0, 0.5);
         padding-top: 3rem;
+        z-index: 130;
     }
 
     .inf-carrito {

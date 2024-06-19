@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const entrarButton = document.getElementById('entrar');
-    const nombreUsuario = "<?php echo htmlspecialchars($nombre_usuario); ?>";
-    const emailUsuario = "<?php echo htmlspecialchars($email_usuario); ?>";
+    const nombreUsuario = "<?php echo isset($nombre_usuario) ? htmlspecialchars($nombre_usuario) : ''; ?>";
 
     entrarButton.addEventListener('click', function() {
         const dialogContainer = document.createElement('div');
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (nombreUsuario) {
             // Mostrar información del usuario y opción para cerrar sesión
             const message = document.createElement('p');
-            message.textContent = `Nombre: ${nombreUsuario}\nCorreo: ${emailUsuario}`;
+            message.textContent = `Nombre: ${nombreUsuario}`;
             dialogBox.appendChild(message);
 
             const logoutButton = document.createElement('button');
