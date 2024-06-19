@@ -37,7 +37,7 @@ if ($conn->query($sql) === TRUE) {
             localStorage.removeItem('productosFinalizar');
             localStorage.removeItem('productos');
         </script>";
-        header("Location: confirmacion.html");
+        header("Location: inicio.php");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
@@ -47,4 +47,3 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-?>

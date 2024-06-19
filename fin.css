@@ -2,6 +2,57 @@
     font-family: 'Perpetua Titling MT';
     src: url('ruta/a/PerpetuaTitlingMT.ttf') format('truetype'); /* Cambia la ruta según donde hayas subido tus archivos de fuente */
 }
+/* Modal de verificación */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.success-icon {
+    display: none;
+    font-size: 50px;
+    color: green;
+    margin: 20px 0;
+}
+
+.modal-text {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
 
 html {
     box-sizing: border-box;
