@@ -1,72 +1,39 @@
-// verificar.js
+    document.getElementById('finalizar').addEventListener('click', function(event) {
+        event.preventDefault();
+        const calle = document.getElementById('calle').value.trim();
+        const numero = document.getElementById('numero').value.trim();
+        const colonia = document.getElementById('colonia').value.trim();
+        const referencias = document.getElementById('referencias').value.trim();
 
-// Función para mostrar el modal de verificación
-function showVerificationModal() {
-    const modal = document.getElementById('verificationModal');
-    const spinner = document.getElementById('spinner');
-    const successIcon = document.getElementById('successIcon');
-    const modalText = document.getElementById('modalText');
+        if (!calle || !numero || !colonia) {
+            alert('Por favor, complete todos los campos requeridos: calle, número, colonia.');
+            return;
+        }
 
-    modal.style.display = "block";
+        const modal = document.getElementById('verificationModal');
+        const spinner = document.getElementById('spinner');
+        const successIcon = document.getElementById('successIcon');
+        const modalText = document.getElementById('modalText');
 
-    // Simular un retraso de 3 segundos para la verificación
-    setTimeout(() => {
-        spinner.style.display = "none";
-        successIcon.style.display = "block";
-        modalText.innerText = "¡Compra finalizada con éxito!";
+        spinner.style.display = 'block';
+        successIcon.style.display = 'none';
+        modalText.textContent = 'Procesando compra...';
+        modal.style.display = 'block';
 
-        // Redirigir a la página de inicio después de 2 segundos
         setTimeout(() => {
-            window.location.href = "inicio.php";
-        }, 2000);
-    }, 3000);
-}
+            spinner.style.display = 'none';
+            successIcon.style.display = 'block';
+            modalText.textContent = 'Compra completada con éxito';
+            
+            // Aquí puedes agregar la lógica para enviar el formulario si todo está correcto
+            document.getElementById('formDireccion').submit();
+        }, 3000); // Simula 3 segundos de carga
+    });
 
-// Función para validar los datos de la dirección
-function validarDatosDireccion() {
-    const calle = document.getElementById('calle').value;
-    const numero = document.getElementById('numero').value;
-    const colonia = document.getElementById('colonia').value;
-    const referencias = document.getElementById('referencias').value;
-
-    if (calle === "" || numero === "" || colonia === "" || referencias === "") {
-        alert("Por favor, complete todos los campos de la dirección.");
-        return false;
+    // Para cerrar el modal al hacer clic en cualquier lugar fuera de él
+    window.onclick = function(event) {
+        const modal = document.getElementById('verificationModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
     }
-    return true;
-}
-
-// Manejar la finalización de la compra
-document.getElementById('finalizar').addEventListener('click', (event) => {
-    event.preventDefault();
-
-    if (!validarDatosDireccion()) {
-        return; // Si los datos de la dirección no son válidos, no proceder
-    }
-
-    // Obtener valores de los campos de dirección y método de pago
-    const calle = document.getElementById('calle').value;
-    const numero = document.getElementById('numero').value;
-    const colonia = document.getElementById('colonia').value;
-    const referencias = document.getElementById('referencias').value;
-    const productos = JSON.stringify(JSON.parse(localStorage.getItem("productosFinalizar")) || []);
-    const piezas = parseInt(document.getElementById('piezas').innerText, 10);
-    const total = parseFloat(document.getElementById('total').innerText);
-
-    // Asignar valores a los campos ocultos del formulario
-    document.getElementById('hiddenCalle').value = calle;
-    document.getElementById('hiddenNumero').value = numero;
-    document.getElementById('hiddenColonia').value = colonia;
-    document.getElementById('hiddenReferencias').value = referencias;
-    document.getElementById('hiddenPiezas').value = piezas;
-    document.getElementById('hiddenTotal').value = total;
-    document.getElementById('hiddenProductos').value = productos;
-
-    // Mostrar el modal de verificación
-    showVerificationModal();
-
-    // Enviar el formulario después de un pequeño retraso para mostrar la animación
-    setTimeout(() => {
-        document.getElementById('finalizarCompraForm').submit();
-    }, 3000);
-});
