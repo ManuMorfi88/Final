@@ -85,16 +85,16 @@ body {
 
 /* Encabezado */
 header {
-    background-color: #ED3889;
+    background-color: #ffffff;
     padding: 10px 0;
     height: 75px;
-    border-bottom: 1rem solid white;
+    border-bottom: 1rem solid #6f3325;
 }
 
 .n-sitio {
     margin-top: 10px;
     text-align: center;
-    color: white;
+    color: #6f3325;
 }
 
 /* Dropdown */

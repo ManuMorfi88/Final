@@ -57,6 +57,7 @@
     margin-right: 7rem;
 }
 
+
 .metodo-pago.hidden {
     display: none;
 }
@@ -166,6 +167,7 @@
     .producto-finalizar{
         display: block;
     }
+    
 }
 /* Estilos para el modal de verificación */
 .modal {
